@@ -1,56 +1,31 @@
-# ENS Contracts Vulnerability Analysis
+# ENS contracts — security review workspace
 
-This repository contains source code and security analysis for ENS (Ethereum Name Service) contracts.
+This repository holds **Ethereum Name Service (ENS) contract sources**, local review notes, and **test harnesses** used for security research.
 
-## Structure
+It is intended for **defensive analysis**, reproducible builds, and **responsible disclosure** workflows—not for deploying anything on mainnet without review.
 
+## Layout
+
+- **`contracts/`** — Per-contract source trees (metadata, ABI, Solidity) used for static review and tests.
+- **`test/`** — Foundry tests and scenarios used during analysis.
+- **`script/`** — Deployment and fork-testing scripts (require explicit RPC / keys via environment variables).
+
+Upstream protocol contracts remain the authoritative source; this tree is a working copy for review.
+
+## Ethics & safety
+
+- Do **not** use this repo to harm users or the ENS protocol.
+- Report serious issues through appropriate **coordinated disclosure** channels.
+- Scripts that touch networks require **`DEPLOYER_PRIVATE_KEY`**, **`MAINNET_RPC_URL`**, and similar variables—**never commit secrets**.
+
+## Build
+
+Requires [Foundry](https://book.getfoundry.sh/). From the repo root:
+
+```bash
+forge build
 ```
-ens-vulns/
-├── contracts/              # Downloaded contract source code
-│   └── [ContractName]/     # One directory per contract
-│       ├── metadata.json   # Contract metadata
-│       ├── abi.json        # Contract ABI
-│       ├── source.sol      # Main source file
-│       └── sources/        # All source files with dependencies
-├── decomposition/         # Analysis and decomposition structure
-│   ├── analysis/          # Analysis templates and reports
-│   ├── reports/           # Analysis reports
-│   ├── security_analysis/ # Security analysis reports
-│   └── contract_index.json # Index of all contracts
-└── ens-contracts-repo/    # Full ENS contracts repository
-```
 
-## Contracts
+## License / notices
 
-33 ENS contracts have been downloaded and analyzed:
-- 28 mainnet contracts with full source code
-- 5 chain-specific contracts (L2 reverse resolvers)
-
-## Analysis Status
-
-- ✅ Contract source code downloaded
-- ✅ Full decomposition completed
-- ✅ Security analysis completed
-- ✅ Vulnerability assessment completed
-
-## Key Findings
-
-**Overall Security Rating**: HIGH
-
-- No critical vulnerabilities found
-- Well-designed commitment-based registration
-- Proper access control throughout
-- Standard patterns correctly implemented
-
-## Reports
-
-- `decomposition/reports/decomposition_summary.md` - Full decomposition summary
-- `decomposition/reports/full_decomposition_report.json` - Complete analysis data
-- `decomposition/security_analysis/security_analysis_report.md` - Security findings
-
-## Usage
-
-All analysis has been completed. Review the reports in the `decomposition/` directory for detailed findings.
-
-
-
+Contract sources may follow their original licenses (see files under `contracts/`). Original ENS work belongs to the ENS DAO and contributors.

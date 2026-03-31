@@ -118,10 +118,6 @@ The simulations also validate that:
 - Adding proper authorization checks blocks bypass attempts
 - Input validation prevents malicious data execution
 
-## Files Provided
+## Related artifacts
 
-- `tenderly_raw_bytecode.txt` - Raw transaction data for all attacks
-- `bytecode_attacks.sol` - Solidity contract for bytecode generation
-- `tenderly_bytecode_generator.js` - Node.js script for dynamic generation
-
-Use these files to demonstrate the most dangerous smart contract vulnerability ever discovered, affecting the foundational infrastructure of decentralized naming.
+Optional helper files (if present in the tree) may include Tenderly-related bytecode notes or scripts. Treat all fork simulations as **non-production** and run only against test or virtual networks.
