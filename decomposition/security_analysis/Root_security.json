@@ -1,0 +1,181 @@
+{
+  "contract": "Root",
+  "issues": [
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "Root",
+      "file": "source.sol",
+      "function": "setRecord",
+      "issue": "Public/external function 'setRecord' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "Root",
+      "file": "source.sol",
+      "function": "setSubnodeRecord",
+      "issue": "Public/external function 'setSubnodeRecord' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "Root",
+      "file": "source.sol",
+      "function": "setSubnodeOwner",
+      "issue": "Public/external function 'setSubnodeOwner' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "Root",
+      "file": "source.sol",
+      "function": "setResolver",
+      "issue": "Public/external function 'setResolver' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "Root",
+      "file": "source.sol",
+      "function": "setOwner",
+      "issue": "Public/external function 'setOwner' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "Root",
+      "file": "source.sol",
+      "function": "setTTL",
+      "issue": "Public/external function 'setTTL' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "Root",
+      "file": "source.sol",
+      "function": "setApprovalForAll",
+      "issue": "Public/external function 'setApprovalForAll' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "Root",
+      "file": "source.sol",
+      "function": "setRecord",
+      "issue": "Function 'setRecord' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "Root",
+      "file": "source.sol",
+      "function": "setSubnodeRecord",
+      "issue": "Function 'setSubnodeRecord' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "Root",
+      "file": "source.sol",
+      "function": "setSubnodeOwner",
+      "issue": "Function 'setSubnodeOwner' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "Root",
+      "file": "source.sol",
+      "function": "setResolver",
+      "issue": "Function 'setResolver' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "Root",
+      "file": "source.sol",
+      "function": "setOwner",
+      "issue": "Function 'setOwner' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "Root",
+      "file": "source.sol",
+      "function": "setApprovalForAll",
+      "issue": "Function 'setApprovalForAll' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "Root",
+      "file": "source.sol",
+      "function": "transferOwnership",
+      "issue": "Function 'transferOwnership' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "Root",
+      "file": "source.sol",
+      "function": "setController",
+      "issue": "Function 'setController' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "Root",
+      "file": "source.sol",
+      "function": "setSubnodeOwner",
+      "issue": "Function 'setSubnodeOwner' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "Root",
+      "file": "source.sol",
+      "function": "setResolver",
+      "issue": "Function 'setResolver' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "Root",
+      "file": "sources/contracts/root/Root.sol",
+      "function": "setSubnodeOwner",
+      "issue": "Function 'setSubnodeOwner' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "Root",
+      "file": "sources/contracts/root/Root.sol",
+      "function": "setResolver",
+      "issue": "Function 'setResolver' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    }
+  ],
+  "total_issues": 19,
+  "critical": 0,
+  "high": 7,
+  "medium": 12,
+  "low": 0
+}

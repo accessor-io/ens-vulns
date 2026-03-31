@@ -1,0 +1,14 @@
+{
+  "name": "BaseRegistrarImplementation",
+  "address": "0x57f1887a8BF19b14fC0dF6Fd9B2acc9Af147eA85",
+  "compiler_version": "v0.5.16+commit.9c3226ce",
+  "optimization_used": "0",
+  "runs": "200",
+  "constructor_arguments": "00000000000000000000000000000000000c2e074ec69a0dfb2997ba6c7d2e1e93cdeb708b7545dc668eb9280176169d1c33cfd8ed6f04690a0bcc88a93fc4ae",
+  "evm_version": "Default",
+  "library": "",
+  "license": "None",
+  "proxy": "0",
+  "implementation": "",
+  "swarm_source": "bzzr://3851e1a7c34807fd87cd4b670538168e0584812b7d1f4078ac2687a8c6455ca6"
+}

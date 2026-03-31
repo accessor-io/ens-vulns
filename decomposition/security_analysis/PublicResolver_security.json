@@ -1,0 +1,180 @@
+{
+  "contract": "PublicResolver",
+  "issues": [
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "PublicResolver",
+      "file": "source.sol",
+      "function": "setApprovalForAll",
+      "issue": "Public/external function 'setApprovalForAll' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "PublicResolver",
+      "file": "source.sol",
+      "function": "approve",
+      "issue": "Public/external function 'approve' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "PublicResolver",
+      "file": "source.sol",
+      "function": "setApprovalForAll",
+      "issue": "Function 'setApprovalForAll' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "PublicResolver",
+      "file": "source.sol",
+      "function": "approve",
+      "issue": "Function 'approve' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "dangerous_pattern",
+      "severity": "CRITICAL",
+      "contract": "PublicResolver",
+      "file": "sources/contracts/resolvers/Multicallable.sol",
+      "issue": "delegatecall usage - can execute arbitrary code",
+      "recommendation": "Audit delegatecall usage carefully"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "PublicResolver",
+      "file": "sources/contracts/resolvers/PublicResolver.sol",
+      "function": "setApprovalForAll",
+      "issue": "Public/external function 'setApprovalForAll' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "PublicResolver",
+      "file": "sources/contracts/resolvers/PublicResolver.sol",
+      "function": "approve",
+      "issue": "Public/external function 'approve' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "PublicResolver",
+      "file": "sources/contracts/resolvers/PublicResolver.sol",
+      "function": "setApprovalForAll",
+      "issue": "Function 'setApprovalForAll' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "PublicResolver",
+      "file": "sources/contracts/resolvers/PublicResolver.sol",
+      "function": "approve",
+      "issue": "Function 'approve' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "PublicResolver",
+      "file": "sources/contracts/resolvers/profiles/InterfaceResolver.sol",
+      "function": "setInterface",
+      "issue": "Function 'setInterface' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "PublicResolver",
+      "file": "sources/contracts/resolvers/profiles/AddrResolver.sol",
+      "function": "setAddr",
+      "issue": "Function 'setAddr' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "PublicResolver",
+      "file": "sources/contracts/resolvers/profiles/AddrResolver.sol",
+      "function": "setAddr",
+      "issue": "Function 'setAddr' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "PublicResolver",
+      "file": "sources/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "function": "safeTransferFrom",
+      "issue": "Function 'safeTransferFrom' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "PublicResolver",
+      "file": "sources/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "function": "safeTransferFrom",
+      "issue": "Function 'safeTransferFrom' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "PublicResolver",
+      "file": "sources/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "function": "transferFrom",
+      "issue": "Function 'transferFrom' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "PublicResolver",
+      "file": "sources/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "function": "approve",
+      "issue": "Function 'approve' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "PublicResolver",
+      "file": "sources/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "function": "setApprovalForAll",
+      "issue": "Function 'setApprovalForAll' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "PublicResolver",
+      "file": "sources/@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+      "function": "setApprovalForAll",
+      "issue": "Function 'setApprovalForAll' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "PublicResolver",
+      "file": "sources/@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+      "function": "safeTransferFrom",
+      "issue": "Function 'safeTransferFrom' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    }
+  ],
+  "total_issues": 19,
+  "critical": 1,
+  "high": 4,
+  "medium": 14,
+  "low": 0
+}

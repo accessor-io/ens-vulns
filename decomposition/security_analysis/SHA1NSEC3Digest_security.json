@@ -1,0 +1,19 @@
+{
+  "contract": "SHA1NSEC3Digest",
+  "issues": [
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "SHA1NSEC3Digest",
+      "file": "sources/contracts/dnssec-oracle/nsec3digests/SHA1NSEC3Digest.sol",
+      "function": "hash",
+      "issue": "Public/external function 'hash' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    }
+  ],
+  "total_issues": 1,
+  "critical": 0,
+  "high": 1,
+  "medium": 0,
+  "low": 0
+}

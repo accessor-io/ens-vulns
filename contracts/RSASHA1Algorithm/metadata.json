@@ -1,0 +1,14 @@
+{
+  "name": "RSASHA1Algorithm",
+  "address": "0x6ca8624Bc207F043D140125486De0f7E624e37A1",
+  "compiler_version": "v0.8.17+commit.8df45f5f",
+  "optimization_used": "1",
+  "runs": "1200",
+  "constructor_arguments": "",
+  "evm_version": "london",
+  "library": "",
+  "license": "MIT",
+  "proxy": "0",
+  "implementation": "",
+  "swarm_source": ""
+}

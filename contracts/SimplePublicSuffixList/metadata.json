@@ -1,0 +1,14 @@
+{
+  "name": "SimplePublicSuffixList",
+  "address": "0x823BDa9cA8c47d072376eCD595530c8fb2fAa3ED",
+  "compiler_version": "v0.8.17+commit.8df45f5f",
+  "optimization_used": "1",
+  "runs": "1200",
+  "constructor_arguments": "",
+  "evm_version": "london",
+  "library": "",
+  "license": "MIT",
+  "proxy": "0",
+  "implementation": "",
+  "swarm_source": ""
+}

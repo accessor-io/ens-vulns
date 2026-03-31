@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENS Payment Interface - Malicious Resolver Attack Demo</title>
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.2.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .address-display {
+            background: #f5f5f5;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            word-break: break-all;
+            margin-top: 8px;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .address-correct {
+            border-color: #4caf50;
+            background: #e8f5e9;
+        }
+        
+        .address-malicious {
+            border-color: #f44336;
+            background: #ffebee;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            color: #856404;
+            font-size: 14px;
+            display: none;
+        }
+        
+        .warning.show {
+            display: block;
+        }
+        
+        .warning-icon {
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .result.show {
+            display: block;
+        }
+        
+        .result.success {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            color: #2e7d32;
+        }
+        
+        .result.danger {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            color: #c62828;
+        }
+        
+        .result-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .result-details {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .comparison {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .comparison.show {
+            display: block;
+        }
+        
+        .comparison-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+        
+        .comparison-label {
+            font-weight: 600;
+            color: #666;
+        }
+        
+        .comparison-value {
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+        
+        .address-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .address-box {
+            padding: 12px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            word-break: break-all;
+        }
+        
+        .address-box.real {
+            border-color: #4caf50;
+            background: #e8f5e9;
+        }
+        
+        .address-box.current {
+            border-color: #e0e0e0;
+            background: #f5f5f5;
+        }
+        
+        .address-box.malicious {
+            border-color: #f44336;
+            background: #ffebee;
+        }
+        
+        .resolving {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .loader {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .ens-tooltip {
+            margin-top: 8px;
+            padding: 8px 12px;
+            background: #f0f7ff;
+            border: 1px solid #b3d9ff;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #0066cc;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            display: none;
+        }
+        
+        .ens-tooltip.show {
+            display: block;
+        }
+        
+        .ens-tooltip .ens-name {
+            font-weight: 600;
+            color: #004499;
+        }
+        
+        .ens-tooltip .address {
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            color: #0066cc;
+            margin-left: 5px;
+            word-break: break-all;
+        }
+        
+        .ens-tooltip.resolving {
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💸 Send Payment</h1>
+        <p class="subtitle">Send Ethereum to an ENS name</p>
+        
+        <form id="paymentForm">
+            <div class="form-group">
+                <label for="ensName">ENS Name</label>
+                <input 
+                    type="text" 
+                    id="ensName" 
+                    placeholder="accessor.eth" 
+                    value="accessor.eth"
+                    required
+                />
+                <div id="ensTooltip" class="ens-tooltip"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="amount">Amount (ETH)</label>
+                <input 
+                    type="number" 
+                    id="amount" 
+                    placeholder="0.1" 
+                    value="1.0"
+                    step="0.001"
+                    min="0"
+                    required
+                />
+            </div>
+            
+            <div class="form-group">
+                <label>Address Comparison (Updates as you type)</label>
+                
+                <div style="margin-top: 10px;">
+                    <div style="font-size: 12px; color: #666; margin-bottom: 5px; font-weight: 600;">
+                        ✅ Real Address (PublicResolver):
+                    </div>
+                    <div id="realAddress" class="address-display address-correct">
+                        Type an ENS name to see the real address
+                    </div>
+                </div>
+                
+                <div style="margin-top: 15px;">
+                    <div style="font-size: 12px; color: #666; margin-bottom: 5px; font-weight: 600;">
+                        🔍 Actual Resolver Address (checked on Send):
+                    </div>
+                    <div id="resolvedAddress" class="address-display">
+                        Click "Send Payment" to check what resolver will be used
+                    </div>
+                </div>
+            </div>
+            
+            <div class="warning" id="warning">
+                <span class="warning-icon">⚠️</span>
+                <strong>Warning:</strong> The resolved address does not match PublicResolver's address. 
+                This may indicate a malicious resolver. Proceed with caution!
+            </div>
+            <button type="submit" id="sendBtn" disabled>💸 Send Payment</button>
+        </form>
+        
+        <div id="result" class="result"></div>
+        
+        <div id="comparison" class="comparison">
+            <div class="comparison-row">
+                <span class="comparison-label">Resolver Used:</span>
+                <span class="comparison-value" id="resolverUsed">-</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">PublicResolver Address:</span>
+                <span class="comparison-value" id="publicResolverAddr">-</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">Resolved Address:</span>
+                <span class="comparison-value" id="resolvedAddr">-</span>
+            </div>
+            <div class="comparison-row">
+                <span class="comparison-label">Match:</span>
+                <span class="comparison-value" id="addressMatch">-</span>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Configuration
+        const MAINNET_ENS = '0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e';
+        const MAINNET_PUBLIC_RESOLVER = '0x4976fb03C32e5B8cfe2b6cCB31c09Ba78EBaBa41';
+        const ETH_NODE = '0x93cdeb708b7545dc668eb9280176169d1c33cfd8ed6f04690a0bcc88a93fc4ae';
+        
+        // Use public RPC or allow configuration
+        const RPC_URL = 'https://eth.llamarpc.com'; // Public RPC, can be overridden
+        
+        // Initialize ethers provider
+        let provider;
+        try {
+            provider = new ethers.providers.JsonRpcProvider(RPC_URL);
+        } catch (e) {
+            console.error('Failed to initialize provider:', e);
+        }
+        
+        // ENS Registry ABI (minimal)
+        const ENS_ABI = [
+            'function resolver(bytes32 node) external view returns (address)',
+            'function owner(bytes32 node) external view returns (address)'
+        ];
+        
+        // PublicResolver ABI (minimal)
+        const RESOLVER_ABI = [
+            'function addr(bytes32 node) external view returns (address payable)'
+        ];
+        
+        const ensNameInput = document.getElementById('ensName');
+        const amountInput = document.getElementById('amount');
+        const ensTooltip = document.getElementById('ensTooltip');
+        const realAddressDiv = document.getElementById('realAddress');
+        const resolvedAddressDiv = document.getElementById('resolvedAddress');
+        const warningDiv = document.getElementById('warning');
+        const sendBtn = document.getElementById('sendBtn');
+        const resultDiv = document.getElementById('result');
+        const comparisonDiv = document.getElementById('comparison');
+        
+        let currentResolvedAddress = null;
+        let currentRealAddress = null;
+        let isMalicious = false;
+        let resolveTimeout = null;
+        
+        // Helper: Get namehash for ENS name
+        function getNamehash(name) {
+            const parts = name.toLowerCase().split('.');
+            let node = ethers.utils.hexZeroPad('0x0', 32);
+            
+            for (let i = parts.length - 1; i >= 0; i--) {
+                const labelHash = ethers.utils.keccak256(ethers.utils.toUtf8Bytes(parts[i]));
+                node = ethers.utils.keccak256(
+                    ethers.utils.concat([node, labelHash])
+                );
+            }
+            
+            return node;
+        }
+        
+        // Resolve real address from PublicResolver directly
+        async function resolveRealAddress(name) {
+            if (!provider) {
+                throw new Error('Provider not initialized. Please check your internet connection.');
+            }
+            
+            try {
+                const namehash = getNamehash(name);
+                const publicResolver = new ethers.Contract(MAINNET_PUBLIC_RESOLVER, RESOLVER_ABI, provider);
+                const address = await publicResolver.addr(namehash);
+                
+                if (address === ethers.constants.AddressZero) {
+                    throw new Error('Name not resolved in PublicResolver (name may not exist or have no address set)');
+                }
+                
+                // Return the FULL address as a string (no truncation)
+                const fullAddress = address.toString();
+                console.log('Resolved REAL address from PublicResolver:', fullAddress);
+                return fullAddress;
+            } catch (error) {
+                if (error.message.includes('not resolved')) {
+                    throw error;
+                }
+                throw new Error(`Failed to resolve real address: ${error.message}`);
+            }
+        }
+        
+        // Resolve address from current resolver (which might be malicious)
+        async function resolveCurrentResolver(name) {
+            if (!provider) {
+                throw new Error('Provider not initialized. Please check your internet connection.');
+            }
+            
+            try {
+                const namehash = getNamehash(name);
+                const ensRegistry = new ethers.Contract(MAINNET_ENS, ENS_ABI, provider);
+                
+                // Get the resolver set for this name
+                const resolverAddress = await ensRegistry.resolver(namehash);
+                
+                if (resolverAddress === ethers.constants.AddressZero) {
+                    throw new Error('No resolver set for this name');
+                }
+                
+                // Check if it's PublicResolver
+                const isPublicResolver = resolverAddress.toLowerCase() === MAINNET_PUBLIC_RESOLVER.toLowerCase();
+                
+                // Query the resolver for the address
+                const resolver = new ethers.Contract(resolverAddress, RESOLVER_ABI, provider);
+                let address;
+                
+                try {
+                    address = await resolver.addr(namehash);
+                } catch (error) {
+                    throw new Error(`Resolver failed to return address: ${error.message}`);
+                }
+                
+                if (address === ethers.constants.AddressZero) {
+                    throw new Error('Resolver returned zero address (name may not have address set)');
+                }
+                
+                return {
+                    address: address,
+                    resolver: resolverAddress,
+                    isPublicResolver: isPublicResolver
+                };
+            } catch (error) {
+                if (error.message.includes('No resolver') || error.message.includes('zero address')) {
+                    throw error;
+                }
+                throw new Error(`Failed to resolve current resolver: ${error.message}`);
+            }
+        }
+        
+        // Helper: Capitalize first letter of each word
+        function capitalizeENSName(name) {
+            const parts = name.toLowerCase().split('.');
+            return parts.map(part => part.charAt(0).toUpperCase() + part.slice(1)).join('.');
+        }
+        
+        // Resolve only real address from PublicResolver (for verification as user types)
+        async function resolveRealAddressOnly(name) {
+            if (!name || name.trim().length === 0) {
+                realAddressDiv.textContent = 'Type an ENS name to see the real address';
+                realAddressDiv.className = 'address-display address-correct';
+                ensTooltip.classList.remove('show');
+                sendBtn.disabled = true;
+                return;
+            }
+            
+            // Show resolving state in tooltip
+            const capitalizedName = capitalizeENSName(name);
+            ensTooltip.innerHTML = `<span class="ens-name">${capitalizedName}</span> <span class="address">Resolving...</span>`;
+            ensTooltip.className = 'ens-tooltip show resolving';
+            
+            // Show resolving state in main display
+            realAddressDiv.textContent = 'Resolving...';
+            realAddressDiv.className = 'address-display address-correct resolving';
+            sendBtn.disabled = true;
+            
+            try {
+                const realAddress = await resolveRealAddress(name);
+                
+                // Update tooltip with FULL resolved address (no truncation)
+                ensTooltip.innerHTML = `<span class="ens-name">${capitalizedName}</span> <span class="address">address: ${realAddress}</span>`;
+                ensTooltip.className = 'ens-tooltip show';
+                console.log('Real address resolved:', realAddress); // Debug log
+                
+                // Update real address display
+                realAddressDiv.textContent = realAddress;
+                realAddressDiv.className = 'address-display address-correct';
+                currentRealAddress = realAddress;
+                
+                // Enable send button if we have a valid address
+                sendBtn.disabled = false;
+            } catch (error) {
+                const errorMsg = error.message || 'Unknown error';
+                ensTooltip.innerHTML = `<span class="ens-name">${capitalizedName}</span> <span class="address">Error: ${errorMsg}</span>`;
+                ensTooltip.className = 'ens-tooltip show';
+                realAddressDiv.textContent = 'Error: ' + errorMsg;
+                realAddressDiv.className = 'address-display address-malicious';
+                sendBtn.disabled = true;
+            }
+        }
+        
+        // Check current resolver when user clicks Send (this is where malicious resolver is queried)
+        async function checkCurrentResolver(name) {
+            if (!name || name.trim().length === 0) {
+                return;
+            }
+            
+            // Show resolving state
+            resolvedAddressDiv.textContent = 'Checking resolver...';
+            resolvedAddressDiv.className = 'address-display resolving';
+            warningDiv.classList.remove('show');
+            
+            try {
+                const currentResult = await resolveCurrentResolver(name);
+                
+                // Update current resolver address display
+                resolvedAddressDiv.textContent = currentResult.address;
+                currentResolvedAddress = currentResult.address;
+                
+                // Check if addresses match (case-insensitive comparison)
+                const addressesMatch = currentRealAddress && 
+                    currentRealAddress.toLowerCase() === currentResult.address.toLowerCase();
+                isMalicious = !addressesMatch || !currentResult.isPublicResolver;
+                
+                if (isMalicious) {
+                    resolvedAddressDiv.className = 'address-display address-malicious';
+                    warningDiv.classList.add('show');
+                    
+                    // Show comparison
+                    document.getElementById('resolverUsed').textContent = 
+                        currentResult.resolver.substring(0, 10) + '...' + currentResult.resolver.substring(38);
+                    document.getElementById('publicResolverAddr').textContent = 
+                        currentRealAddress ? currentRealAddress.substring(0, 10) + '...' + currentRealAddress.substring(38) : '-';
+                    document.getElementById('resolvedAddr').textContent = 
+                        currentResult.address.substring(0, 10) + '...' + currentResult.address.substring(38);
+                    document.getElementById('addressMatch').textContent = '❌ NO MATCH';
+                    document.getElementById('addressMatch').style.color = '#f44336';
+                    comparisonDiv.classList.add('show');
+                } else {
+                    resolvedAddressDiv.className = 'address-display address-correct';
+                    document.getElementById('resolverUsed').textContent = 
+                        MAINNET_PUBLIC_RESOLVER.substring(0, 10) + '...' + MAINNET_PUBLIC_RESOLVER.substring(38);
+                    document.getElementById('publicResolverAddr').textContent = 
+                        currentRealAddress ? currentRealAddress.substring(0, 10) + '...' + currentRealAddress.substring(38) : '-';
+                    document.getElementById('resolvedAddr').textContent = 
+                        currentResult.address.substring(0, 10) + '...' + currentResult.address.substring(38);
+                    document.getElementById('addressMatch').textContent = '✅ MATCH';
+                    document.getElementById('addressMatch').style.color = '#4caf50';
+                    comparisonDiv.classList.add('show');
+                }
+            } catch (error) {
+                const errorMsg = error.message || 'Unknown error';
+                resolvedAddressDiv.textContent = 'Error: ' + errorMsg;
+                resolvedAddressDiv.className = 'address-display address-malicious';
+                warningDiv.classList.remove('show');
+            }
+        }
+        
+        // Helper: Check if name looks like a complete ENS name
+        function isCompleteENSName(name) {
+            if (!name) return false;
+            const trimmed = name.trim();
+            // Check if it ends with .eth and has at least one character before it
+            return trimmed.endsWith('.eth') && trimmed.length > 4 && trimmed.split('.eth')[0].length > 0;
+        }
+        
+        // Input handler - only resolves real address from PublicResolver as user types
+        ensNameInput.addEventListener('input', (e) => {
+            const name = e.target.value.trim();
+            
+            // Clear previous timeout
+            if (resolveTimeout) {
+                clearTimeout(resolveTimeout);
+            }
+            
+            // If name is complete (ends with .eth), resolve real address immediately
+            if (isCompleteENSName(name)) {
+                resolveRealAddressOnly(name);
+            } else if (name.length === 0) {
+                // Empty input - clear displays
+                ensTooltip.classList.remove('show');
+                realAddressDiv.textContent = 'Type an ENS name to see the real address';
+                realAddressDiv.className = 'address-display address-correct';
+                resolvedAddressDiv.textContent = 'Click "Send Payment" to check what resolver will be used';
+                resolvedAddressDiv.className = 'address-display';
+                warningDiv.classList.remove('show');
+                sendBtn.disabled = true;
+            }
+            // For partial names (not ending in .eth), don't resolve
+        });
+        
+        // Initial resolution on page load
+        window.addEventListener('load', () => {
+            const initialName = ensNameInput.value.trim();
+            if (initialName && isCompleteENSName(initialName)) {
+                resolveRealAddressOnly(initialName);
+            }
+        });
+        
+        document.getElementById('paymentForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const ensName = ensNameInput.value.trim();
+            
+            if (!ensName || !isCompleteENSName(ensName)) {
+                alert('Please enter a valid ENS name');
+                return;
+            }
+            
+            sendBtn.disabled = true;
+            sendBtn.innerHTML = 'Resolving through actual resolver...<span class="loader"></span>';
+            
+            // Query the actual resolver set for this name (this is what the transaction will use)
+            // This might be malicious!
+            let transactionAddress = null;
+            try {
+                const currentResult = await resolveCurrentResolver(ensName);
+                transactionAddress = currentResult.address;
+                currentResolvedAddress = currentResult.address;
+                
+                // Update display to show what resolver was used
+                resolvedAddressDiv.textContent = currentResult.address;
+                resolvedAddressDiv.className = currentResult.isPublicResolver ? 
+                    'address-display address-correct' : 'address-display address-malicious';
+                
+                // Check if it matches the real address
+                const addressesMatch = currentRealAddress && 
+                    currentRealAddress.toLowerCase() === currentResult.address.toLowerCase();
+                isMalicious = !addressesMatch || !currentResult.isPublicResolver;
+                
+                if (isMalicious) {
+                    warningDiv.classList.add('show');
+                    // Show comparison
+                    document.getElementById('resolverUsed').textContent = 
+                        currentResult.resolver.substring(0, 10) + '...' + currentResult.resolver.substring(38);
+                    document.getElementById('publicResolverAddr').textContent = 
+                        currentRealAddress ? currentRealAddress.substring(0, 10) + '...' + currentRealAddress.substring(38) : '-';
+                    document.getElementById('resolvedAddr').textContent = 
+                        currentResult.address.substring(0, 10) + '...' + currentResult.address.substring(38);
+                    document.getElementById('addressMatch').textContent = '❌ NO MATCH';
+                    document.getElementById('addressMatch').style.color = '#f44336';
+                    comparisonDiv.classList.add('show');
+                } else {
+                    resolvedAddressDiv.className = 'address-display address-correct';
+                    document.getElementById('resolverUsed').textContent = 
+                        MAINNET_PUBLIC_RESOLVER.substring(0, 10) + '...' + MAINNET_PUBLIC_RESOLVER.substring(38);
+                    document.getElementById('publicResolverAddr').textContent = 
+                        currentRealAddress ? currentRealAddress.substring(0, 10) + '...' + currentRealAddress.substring(38) : '-';
+                    document.getElementById('resolvedAddr').textContent = 
+                        currentResult.address.substring(0, 10) + '...' + currentResult.address.substring(38);
+                    document.getElementById('addressMatch').textContent = '✅ MATCH';
+                    document.getElementById('addressMatch').style.color = '#4caf50';
+                    comparisonDiv.classList.add('show');
+                }
+            } catch (error) {
+                const errorMsg = error.message || 'Unknown error';
+                resolvedAddressDiv.textContent = 'Error: ' + errorMsg;
+                resolvedAddressDiv.className = 'address-display address-malicious';
+                sendBtn.disabled = false;
+                sendBtn.textContent = '💸 Send Payment';
+                return;
+            }
+            
+            // Wait a moment for user to see the resolver check
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            
+            const amount = parseFloat(amountInput.value);
+            
+            sendBtn.innerHTML = 'Sending transaction...<span class="loader"></span>';
+            
+            // Simulate transaction using the address from the actual resolver (which might be malicious)
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            
+            // Show result - transaction used the actual resolver's address
+            resultDiv.className = 'result show';
+            
+            if (isMalicious) {
+                resultDiv.classList.add('danger');
+                resultDiv.innerHTML = `
+                    <div class="result-title">⚠️ Funds Sent to Attacker!</div>
+                    <div class="result-details">
+                        <p><strong>Transaction resolved through actual resolver and sent ${amount} ETH to:</strong></p>
+                        <p style="font-family: monospace; margin: 10px 0;">${transactionAddress}</p>
+                        <p style="margin-top: 15px; color: #c62828;">
+                            <strong>CRITICAL:</strong> The transaction used the actual resolver, which returned a different address than PublicResolver!
+                        </p>
+                        <p style="margin-top: 10px;">
+                            <strong>You verified (PublicResolver):</strong><br>
+                            <span style="font-family: monospace;">${currentRealAddress}</span>
+                        </p>
+                        <p style="margin-top: 10px;">
+                            <strong>Transaction actually sent to (Actual Resolver):</strong><br>
+                            <span style="font-family: monospace;">${transactionAddress}</span>
+                        </p>
+                        <p style="margin-top: 10px;">
+                            The malicious resolver intercepted the transaction and returned the attacker's address.
+                            Your funds have been diverted to the attacker.
+                        </p>
+                    </div>
+                `;
+            } else {
+                resultDiv.classList.add('success');
+                resultDiv.innerHTML = `
+                    <div class="result-title">✅ Payment Sent Successfully</div>
+                    <div class="result-details">
+                        <p>Transaction resolved through actual resolver and sent ${amount} ETH to <strong>${ensName}</strong></p>
+                        <p style="font-family: monospace; margin: 10px 0;">${transactionAddress}</p>
+                        <p style="margin-top: 15px;">The actual resolver matches PublicResolver - payment is safe.</p>
+                    </div>
+                `;
+            }
+            
+            sendBtn.disabled = false;
+            sendBtn.textContent = '💸 Send Payment';
+        });
+    </script>
+</body>
+</html>

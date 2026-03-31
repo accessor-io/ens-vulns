@@ -1,0 +1,266 @@
+[
+  {
+    "name": "ArbitrumReverseResolver",
+    "address": "N/A",
+    "chain": "N/A",
+    "source_files": 0,
+    "path": "ArbitrumReverseResolver",
+    "has_metadata": false
+  },
+  {
+    "name": "BaseRegistrarImplementation",
+    "address": "0x57f1887a8BF19b14fC0dF6Fd9B2acc9Af147eA85",
+    "chain": "N/A",
+    "source_files": 3,
+    "path": "BaseRegistrarImplementation",
+    "has_metadata": true
+  },
+  {
+    "name": "BaseReverseResolver",
+    "address": "N/A",
+    "chain": "N/A",
+    "source_files": 0,
+    "path": "BaseReverseResolver",
+    "has_metadata": false
+  },
+  {
+    "name": "BatchGatewayProvider",
+    "address": "0xd1E3FAc3837b85437530B8B5244E4deF43219C04",
+    "chain": "N/A",
+    "source_files": 4,
+    "path": "BatchGatewayProvider",
+    "has_metadata": true
+  },
+  {
+    "name": "DNSRegistrar",
+    "address": "0xB32cB5677a7C971689228EC835800432B339bA2B",
+    "chain": "N/A",
+    "source_files": 24,
+    "path": "DNSRegistrar",
+    "has_metadata": true
+  },
+  {
+    "name": "DNSSECImpl",
+    "address": "0x0fc3152971714E5ed7723FAFa650F86A4BaF30C5",
+    "chain": "N/A",
+    "source_files": 9,
+    "path": "DNSSECImpl",
+    "has_metadata": true
+  },
+  {
+    "name": "DefaultReverseRegistrar",
+    "address": "0x283F227c4Bd38ecE252C4Ae7ECE650B0e913f1f9",
+    "chain": "N/A",
+    "source_files": 22,
+    "path": "DefaultReverseRegistrar",
+    "has_metadata": true
+  },
+  {
+    "name": "DefaultReverseResolver",
+    "address": "0xA7d635c8de9a58a228AA69353a1699C7Cc240DCF",
+    "chain": "N/A",
+    "source_files": 14,
+    "path": "DefaultReverseResolver",
+    "has_metadata": true
+  },
+  {
+    "name": "ENSRegistry",
+    "address": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e",
+    "chain": "N/A",
+    "source_files": 3,
+    "path": "ENSRegistry",
+    "has_metadata": true
+  },
+  {
+    "name": "ETHRegistrarController",
+    "address": "0x59E16fcCd424Cc24e280Be16E11Bcd56fb0CE547",
+    "chain": "N/A",
+    "source_files": 36,
+    "path": "ETHRegistrarController",
+    "has_metadata": true
+  },
+  {
+    "name": "ExponentialPremiumPriceOracle",
+    "address": "0x7542565191d074cE84fBfA92cAE13AcB84788CA9",
+    "chain": "N/A",
+    "source_files": 8,
+    "path": "ExponentialPremiumPriceOracle",
+    "has_metadata": true
+  },
+  {
+    "name": "ExtendedDNSResolver",
+    "address": "0x08769D484a7Cd9c4A98E928D9E270221F3E8578c",
+    "chain": "N/A",
+    "source_files": 12,
+    "path": "ExtendedDNSResolver",
+    "has_metadata": true
+  },
+  {
+    "name": "LineaReverseResolver",
+    "address": "N/A",
+    "chain": "N/A",
+    "source_files": 0,
+    "path": "LineaReverseResolver",
+    "has_metadata": false
+  },
+  {
+    "name": "MigrationHelper",
+    "address": "0xeA6407e845Bf7a462FBdb3584728a9f617dA7FE9",
+    "chain": "N/A",
+    "source_files": 13,
+    "path": "MigrationHelper",
+    "has_metadata": true
+  },
+  {
+    "name": "NameWrapper",
+    "address": "0xD4416b13d2b3a9aBae7AcD5D6C2BbDBE25686401",
+    "chain": "N/A",
+    "source_files": 27,
+    "path": "NameWrapper",
+    "has_metadata": true
+  },
+  {
+    "name": "OffchainDNSResolver",
+    "address": "0xF142B308cF687d4358410a4cB885513b30A42025",
+    "chain": "N/A",
+    "source_files": 16,
+    "path": "OffchainDNSResolver",
+    "has_metadata": true
+  },
+  {
+    "name": "OptimismReverseResolver",
+    "address": "N/A",
+    "chain": "N/A",
+    "source_files": 0,
+    "path": "OptimismReverseResolver",
+    "has_metadata": false
+  },
+  {
+    "name": "P256SHA256Algorithm",
+    "address": "0x0faa24e538bA4620165933f68a9d142f79A68091",
+    "chain": "N/A",
+    "source_files": 5,
+    "path": "P256SHA256Algorithm",
+    "has_metadata": true
+  },
+  {
+    "name": "PublicResolver",
+    "address": "0xF29100983E058B709F3D539b0c765937B804AC15",
+    "chain": "N/A",
+    "source_files": 42,
+    "path": "PublicResolver",
+    "has_metadata": true
+  },
+  {
+    "name": "RSASHA1Algorithm",
+    "address": "0x6ca8624Bc207F043D140125486De0f7E624e37A1",
+    "chain": "N/A",
+    "source_files": 7,
+    "path": "RSASHA1Algorithm",
+    "has_metadata": true
+  },
+  {
+    "name": "RSASHA256Algorithm",
+    "address": "0x9D1B5a639597f558bC37Cf81813724076c5C1e96",
+    "chain": "N/A",
+    "source_files": 6,
+    "path": "RSASHA256Algorithm",
+    "has_metadata": true
+  },
+  {
+    "name": "ReverseRegistrar",
+    "address": "0xa58E81fe9b61B5c3fE2AFD33CF304c454AbFc7Cb",
+    "chain": "N/A",
+    "source_files": 14,
+    "path": "ReverseRegistrar",
+    "has_metadata": true
+  },
+  {
+    "name": "Root",
+    "address": "0xaB528d626EC275E3faD363fF1393A41F581c5897",
+    "chain": "N/A",
+    "source_files": 2,
+    "path": "Root",
+    "has_metadata": true
+  },
+  {
+    "name": "SHA1Digest",
+    "address": "0x9c9fcEa62bD0A723b62A2F1e98dE0Ee3df813619",
+    "chain": "N/A",
+    "source_files": 5,
+    "path": "SHA1Digest",
+    "has_metadata": true
+  },
+  {
+    "name": "SHA1NSEC3Digest",
+    "address": "0x849851A7683cfF52De5F50C712C0606FEf6A3e8f",
+    "chain": "N/A",
+    "source_files": 4,
+    "path": "SHA1NSEC3Digest",
+    "has_metadata": true
+  },
+  {
+    "name": "SHA256Digest",
+    "address": "0xCFe6edBD47a032585834A6921D1d05CB70FcC36d",
+    "chain": "N/A",
+    "source_files": 4,
+    "path": "SHA256Digest",
+    "has_metadata": true
+  },
+  {
+    "name": "ScrollReverseResolver",
+    "address": "N/A",
+    "chain": "N/A",
+    "source_files": 0,
+    "path": "ScrollReverseResolver",
+    "has_metadata": false
+  },
+  {
+    "name": "SimplePublicSuffixList",
+    "address": "0x823BDa9cA8c47d072376eCD595530c8fb2fAa3ED",
+    "chain": "N/A",
+    "source_files": 4,
+    "path": "SimplePublicSuffixList",
+    "has_metadata": true
+  },
+  {
+    "name": "StaticBulkRenewal",
+    "address": "0xc649947a460B135e6B9a70Ee2FB429aDBB529290",
+    "chain": "N/A",
+    "source_files": 38,
+    "path": "StaticBulkRenewal",
+    "has_metadata": true
+  },
+  {
+    "name": "StaticMetadataService",
+    "address": "0x3A368e3D5F19aF3DE594A9fC2CFfc6e256a616c7",
+    "chain": "N/A",
+    "source_files": 2,
+    "path": "StaticMetadataService",
+    "has_metadata": true
+  },
+  {
+    "name": "TLDPublicSuffixList",
+    "address": "0x7A72fEFd970A7726c4823623d88E9f3eFA1c300C",
+    "chain": "N/A",
+    "source_files": 4,
+    "path": "TLDPublicSuffixList",
+    "has_metadata": true
+  },
+  {
+    "name": "UniversalResolver",
+    "address": "0xED73a03F19e8D849E44a39252d222c6ad5217E1e",
+    "chain": "N/A",
+    "source_files": 27,
+    "path": "UniversalResolver",
+    "has_metadata": true
+  },
+  {
+    "name": "WrappedETHRegistrarController",
+    "address": "0x253553366Da8546fC250F225fe3d25d0C782303b",
+    "chain": "N/A",
+    "source_files": 40,
+    "path": "WrappedETHRegistrarController",
+    "has_metadata": true
+  }
+]

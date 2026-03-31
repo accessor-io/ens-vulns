@@ -1,0 +1,14 @@
+{
+  "name": "NameWrapper",
+  "address": "0xD4416b13d2b3a9aBae7AcD5D6C2BbDBE25686401",
+  "compiler_version": "v0.8.17+commit.8df45f5f",
+  "optimization_used": "1",
+  "runs": "1300",
+  "constructor_arguments": "",
+  "evm_version": "Default",
+  "library": "",
+  "license": "MIT",
+  "proxy": "0",
+  "implementation": "",
+  "swarm_source": ""
+}

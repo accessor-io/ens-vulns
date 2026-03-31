@@ -1,0 +1,18 @@
+# Secrets
+.env
+.env.*
+
+# Foundry
+out/
+cache/
+broadcast/
+
+# Dependencies
+node_modules/
+
+# Full contract clones kept alongside this repo (use upstream or publish separately)
+ens-contracts-repo/
+real-ens-contracts/
+
+# OS
+.DS_Store

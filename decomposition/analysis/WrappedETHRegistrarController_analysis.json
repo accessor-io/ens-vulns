@@ -1,0 +1,708 @@
+{
+  "name": "WrappedETHRegistrarController",
+  "address": "0x253553366Da8546fC250F225fe3d25d0C782303b",
+  "chain": null,
+  "source_files": [
+    "sources/contracts/wrapper/INameWrapper.sol",
+    "sources/contracts/wrapper/INameWrapperUpgrade.sol",
+    "sources/contracts/wrapper/IMetadataService.sol",
+    "sources/contracts/utils/ERC20Recoverable.sol",
+    "sources/contracts/ethregistrar/IETHRegistrarController.sol",
+    "sources/contracts/ethregistrar/ETHRegistrarController.sol",
+    "sources/contracts/ethregistrar/IPriceOracle.sol",
+    "sources/contracts/ethregistrar/StringUtils.sol",
+    "sources/contracts/ethregistrar/BaseRegistrarImplementation.sol",
+    "sources/contracts/ethregistrar/IBaseRegistrar.sol",
+    "sources/contracts/resolvers/Resolver.sol",
+    "sources/contracts/resolvers/profiles/IPubkeyResolver.sol",
+    "sources/contracts/resolvers/profiles/IExtendedResolver.sol",
+    "sources/contracts/resolvers/profiles/ITextResolver.sol",
+    "sources/contracts/resolvers/profiles/INameResolver.sol",
+    "sources/contracts/resolvers/profiles/IDNSZoneResolver.sol",
+    "sources/contracts/resolvers/profiles/IAddressResolver.sol",
+    "sources/contracts/resolvers/profiles/IContentHashResolver.sol",
+    "sources/contracts/resolvers/profiles/IAddrResolver.sol",
+    "sources/contracts/resolvers/profiles/IDNSRecordResolver.sol",
+    "sources/contracts/resolvers/profiles/IABIResolver.sol",
+    "sources/contracts/resolvers/profiles/IInterfaceResolver.sol",
+    "sources/contracts/registry/ENS.sol",
+    "sources/contracts/reverseRegistrar/ReverseRegistrar.sol",
+    "sources/contracts/reverseRegistrar/IReverseRegistrar.sol",
+    "sources/contracts/reverseRegistrar/ReverseClaimer.sol",
+    "sources/contracts/root/Controllable.sol",
+    "sources/@openzeppelin/contracts/token/ERC20/IERC20.sol",
+    "sources/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+    "sources/@openzeppelin/contracts/token/ERC721/ERC721.sol",
+    "sources/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+    "sources/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+    "sources/@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+    "sources/@openzeppelin/contracts/access/Ownable.sol",
+    "sources/@openzeppelin/contracts/utils/Address.sol",
+    "sources/@openzeppelin/contracts/utils/Context.sol",
+    "sources/@openzeppelin/contracts/utils/Strings.sol",
+    "sources/@openzeppelin/contracts/utils/introspection/ERC165.sol",
+    "sources/@openzeppelin/contracts/utils/introspection/IERC165.sol",
+    "sources/@openzeppelin/contracts/utils/math/Math.sol"
+  ],
+  "total_lines": 3183,
+  "functions": [
+    "sqrt",
+    "setMetadataService",
+    "setResolver",
+    "ownerOf",
+    "setRecord",
+    "commit",
+    "valid",
+    "pubkey",
+    "_beforeTokenTransfer",
+    "renounceOwnership",
+    "ens",
+    "metadataService",
+    "approve",
+    "claim",
+    "multicall",
+    "unwrapETH2LD",
+    "strlen",
+    "_transfer",
+    "safeTransferFrom",
+    "supportsInterface",
+    "text",
+    "zonehash",
+    "sha3HexAddress",
+    "isContract",
+    "recoverFunds",
+    "_checkOwner",
+    "_baseURI",
+    "_revert",
+    "functionStaticCall",
+    "resolve",
+    "setTTL",
+    "uri",
+    "symbol",
+    "balanceOf",
+    "ceilDiv",
+    "setApprovalForAll",
+    "_checkOnERC721Received",
+    "setChildFuses",
+    "_setReverseRecord",
+    "transferFrom",
+    "multicallWithNodeCheck",
+    "verifyCallResult",
+    "renew",
+    "_setApprovalForAll",
+    "functionDelegateCall",
+    "wrap",
+    "_transferOwnership",
+    "setSubnodeOwner",
+    "min",
+    "_msgData",
+    "registerAndWrapETH2LD",
+    "interfaceImplementer",
+    "names",
+    "wrapETH2LD",
+    "log2",
+    "setPubkey",
+    "upgrade",
+    "reclaim",
+    "allowance",
+    "claimForAddr",
+    "setMultihash",
+    "tokenURI",
+    "average",
+    "setInterface",
+    "resolver",
+    "multihash",
+    "getApproved",
+    "toHexString",
+    "setController",
+    "_approve",
+    "setText",
+    "allFusesBurned",
+    "contenthash",
+    "_msgSender",
+    "extendExpiry",
+    "addController",
+    "_burn",
+    "rentPrice",
+    "ABI",
+    "log10",
+    "_setRecords",
+    "transfer",
+    "_mint",
+    "transferOwnership",
+    "_requireMinted",
+    "node",
+    "setUpgradeContract",
+    "mulDiv",
+    "upgradeContract",
+    "toString",
+    "setContent",
+    "safeBatchTransferFrom",
+    "functionCallWithValue",
+    "sendValue",
+    "addr",
+    "setAddr",
+    "isWrapped",
+    "balanceOfBatch",
+    "name",
+    "setFuses",
+    "registerOnly",
+    "setOwner",
+    "setName",
+    "register",
+    "_isApprovedOrOwner",
+    "setDefaultResolver",
+    "verifyCallResultFromTarget",
+    "nameExpires",
+    "setABI",
+    "registrar",
+    "setDnsrr",
+    "wrapFromUpgrade",
+    "ttl",
+    "getData",
+    "claimWithResolver",
+    "withdraw",
+    "_register",
+    "dnsRecord",
+    "setNameForAddr",
+    "_ownerOf",
+    "max",
+    "available",
+    "isApprovedForAll",
+    "unwrap",
+    "removeController",
+    "_afterTokenTransfer",
+    "_exists",
+    "content",
+    "_safeMint",
+    "makeCommitment",
+    "canModifyName",
+    "isApprovedFor",
+    "totalSupply",
+    "ownsContract",
+    "setSubnodeRecord",
+    "log256",
+    "_safeTransfer",
+    "onERC721Received",
+    "recordExists",
+    "functionCall",
+    "price",
+    "owner",
+    "_consumeCommitment",
+    "setContenthash"
+  ],
+  "modifiers": [
+    "onlyController",
+    "onlyOwner",
+    "live",
+    "authorised"
+  ],
+  "events": [
+    "ControllerChanged",
+    "Approval",
+    "DefaultResolverChanged",
+    "TransferSingle",
+    "ControllerAdded",
+    "OwnershipTransferred",
+    "TextChanged",
+    "AddressChanged",
+    "NewOwner",
+    "NameWrapped",
+    "ContentChanged",
+    "ExpiryExtended",
+    "InterfaceChanged",
+    "ControllerRemoved",
+    "URI",
+    "FusesSet",
+    "TransferBatch",
+    "NameUnwrapped",
+    "DNSZonehashChanged",
+    "NameMigrated",
+    "NameChanged",
+    "PubkeyChanged",
+    "ABIChanged",
+    "DNSRecordChanged",
+    "AddrChanged",
+    "NameRegistered",
+    "ApprovalForAll",
+    "NameRenewed",
+    "Transfer",
+    "ContenthashChanged",
+    "DNSRecordDeleted",
+    "NewTTL",
+    "NewResolver",
+    "ReverseClaimed"
+  ],
+  "interfaces": [
+    "IAddressResolver",
+    "for",
+    "IERC721",
+    "INameWrapperUpgrade",
+    "IERC721Metadata",
+    "IPubkeyResolver",
+    "IERC1155",
+    "IContentHashResolver",
+    "ID",
+    "of",
+    "IDNSZoneResolver",
+    "IInterfaceResolver",
+    "is",
+    "INameResolver",
+    "IERC721Receiver",
+    "IBaseRegistrar",
+    "which",
+    "Resolver",
+    "IERC20",
+    "IPriceOracle",
+    "IETHRegistrarController",
+    "IDNSRecordResolver",
+    "ITextResolver",
+    "IERC165",
+    "id",
+    "IAddrResolver",
+    "IExtendedResolver",
+    "IMetadataService",
+    "ENS",
+    "IABIResolver",
+    "INameWrapper",
+    "IReverseRegistrar",
+    "defined"
+  ],
+  "dependencies": [
+    "../../utils/Address.sol",
+    "../../utils/Context.sol",
+    "../../utils/Strings.sol",
+    "../../utils/introspection/ERC165.sol",
+    "../../utils/introspection/IERC165.sol",
+    "../IERC721.sol",
+    "../ethregistrar/IBaseRegistrar.sol",
+    "../registry/ENS.sol",
+    "../root/Controllable.sol",
+    "../utils/Context.sol",
+    "./IBaseRegistrar.sol",
+    "./IERC165.sol",
+    "./IERC721.sol",
+    "./IERC721Receiver.sol",
+    "./IMetadataService.sol",
+    "./INameWrapperUpgrade.sol",
+    "./IPriceOracle.sol",
+    "./IReverseRegistrar.sol",
+    "./extensions/IERC721Metadata.sol",
+    "./math/Math.sol",
+    "./profiles/IABIResolver.sol",
+    "./profiles/IAddrResolver.sol",
+    "./profiles/IAddressResolver.sol",
+    "./profiles/IContentHashResolver.sol",
+    "./profiles/IDNSRecordResolver.sol",
+    "./profiles/IDNSZoneResolver.sol",
+    "./profiles/IExtendedResolver.sol",
+    "./profiles/IInterfaceResolver.sol",
+    "./profiles/INameResolver.sol",
+    "./profiles/IPubkeyResolver.sol",
+    "./profiles/ITextResolver.sol",
+    "@openzeppelin/contracts/access/Ownable.sol",
+    "@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+    "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+    "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+    "@openzeppelin/contracts/token/ERC721/IERC721.sol",
+    "@openzeppelin/contracts/utils/introspection/IERC165.sol"
+  ],
+  "security_patterns": {
+    "access_control": [
+      "Ownable pattern detected",
+      "Ownable pattern detected",
+      "Ownable pattern detected",
+      "Ownable pattern detected",
+      "Ownable pattern detected",
+      "Ownable pattern detected"
+    ],
+    "external_calls": [
+      "Transfer calls detected",
+      "Transfer calls detected"
+    ],
+    "payable_functions": [
+      "renew",
+      "addr",
+      "sendValue",
+      "must"
+    ],
+    "reentrancy_guards": [
+      "ReentrancyGuard pattern detected"
+    ],
+    "low_level_calls": [
+      "Low-level calls detected"
+    ]
+  },
+  "potential_issues": [
+    "Uses block.timestamp (timestamp dependency)",
+    "Contains inline assembly"
+  ],
+  "abi_functions": [
+    {
+      "name": "MIN_REGISTRATION_DURATION",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "available",
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "commit",
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "commitment",
+          "type": "bytes32"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "commitments",
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "makeCommitment",
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "duration",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "secret",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "resolver",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes[]",
+          "name": "data",
+          "type": "bytes[]"
+        },
+        {
+          "internalType": "bool",
+          "name": "reverseRecord",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint16",
+          "name": "ownerControlledFuses",
+          "type": "uint16"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "pure"
+    },
+    {
+      "name": "maxCommitmentAge",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "minCommitmentAge",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "nameWrapper",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "contract INameWrapper",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "owner",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "prices",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "contract IPriceOracle",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "recoverFunds",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "register",
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "duration",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "secret",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "resolver",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes[]",
+          "name": "data",
+          "type": "bytes[]"
+        },
+        {
+          "internalType": "bool",
+          "name": "reverseRecord",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint16",
+          "name": "ownerControlledFuses",
+          "type": "uint16"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "payable"
+    },
+    {
+      "name": "renew",
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "duration",
+          "type": "uint256"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "payable"
+    },
+    {
+      "name": "renounceOwnership",
+      "inputs": [],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "rentPrice",
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "duration",
+          "type": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "base",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "premium",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IPriceOracle.Price",
+          "name": "price",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "reverseRegistrar",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "contract ReverseRegistrar",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "supportsInterface",
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "interfaceID",
+          "type": "bytes4"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure"
+    },
+    {
+      "name": "transferOwnership",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "valid",
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure"
+    },
+    {
+      "name": "withdraw",
+      "inputs": [],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "DNSRegistrar",
+  "address": "0xB32cB5677a7C971689228EC835800432B339bA2B",
+  "compiler_version": "v0.8.17+commit.8df45f5f",
+  "optimization_used": "1",
+  "runs": "1200",
+  "constructor_arguments": "",
+  "evm_version": "london",
+  "library": "",
+  "license": "MIT",
+  "proxy": "0",
+  "implementation": "",
+  "swarm_source": ""
+}

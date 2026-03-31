@@ -1,0 +1,14 @@
+{
+  "name": "ENSRegistry",
+  "address": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e",
+  "compiler_version": "v0.5.16+commit.9c3226ce",
+  "optimization_used": "0",
+  "runs": "200",
+  "constructor_arguments": "000000000000000000000000314159265dd8dbb310642f98f50c066173c1259b",
+  "evm_version": "Default",
+  "library": "",
+  "license": "None",
+  "proxy": "0",
+  "implementation": "",
+  "swarm_source": "bzzr://e307c1741e952c90d504ae303fa3fa1e5f6265200c65304d90abaa909d2dee4b"
+}

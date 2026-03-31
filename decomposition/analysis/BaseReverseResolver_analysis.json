@@ -1,0 +1,15 @@
+{
+  "name": "BaseReverseResolver",
+  "address": null,
+  "chain": null,
+  "source_files": [],
+  "total_lines": 0,
+  "functions": [],
+  "modifiers": [],
+  "events": [],
+  "interfaces": [],
+  "dependencies": [],
+  "security_patterns": {},
+  "potential_issues": [],
+  "abi_functions": []
+}

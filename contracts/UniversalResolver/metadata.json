@@ -1,0 +1,14 @@
+{
+  "name": "UniversalResolver",
+  "address": "0xED73a03F19e8D849E44a39252d222c6ad5217E1e",
+  "compiler_version": "v0.8.26+commit.8a97fa7a",
+  "optimization_used": "1",
+  "runs": "1000000",
+  "constructor_arguments": "000000000000000000000000fe89cc7abb2c4183683ab71653c4cdc9b02d44b700000000000000000000000000000000000c2e074ec69a0dfb2997ba6c7d2e1e000000000000000000000000d1e3fac3837b85437530b8b5244e4def43219c04",
+  "evm_version": "paris",
+  "library": "",
+  "license": "MIT",
+  "proxy": "0",
+  "implementation": "",
+  "swarm_source": ""
+}

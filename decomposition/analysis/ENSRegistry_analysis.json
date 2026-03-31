@@ -1,0 +1,310 @@
+{
+  "name": "ENSRegistry",
+  "address": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e",
+  "chain": null,
+  "source_files": [
+    "source.sol",
+    "sources/contracts/registry/ENSRegistry.sol",
+    "sources/contracts/registry/ENSRegistryWithFallback.sol"
+  ],
+  "total_lines": 528,
+  "functions": [
+    "setTTL",
+    "setSubnodeRecord",
+    "setResolver",
+    "isApprovedForAll",
+    "resolver",
+    "setRecord",
+    "recordExists",
+    "ttl",
+    "_setResolverAndTTL",
+    "setSubnodeOwner",
+    "owner",
+    "setOwner",
+    "setApprovalForAll",
+    "_setOwner"
+  ],
+  "modifiers": [
+    "authorised"
+  ],
+  "events": [
+    "ApprovalForAll",
+    "Transfer",
+    "NewOwner",
+    "NewTTL",
+    "NewResolver"
+  ],
+  "interfaces": [
+    "ENS"
+  ],
+  "dependencies": [
+    "./ENS.sol",
+    "./ENSRegistry.sol"
+  ],
+  "security_patterns": {},
+  "potential_issues": [],
+  "abi_functions": [
+    {
+      "name": "isApprovedForAll",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "old",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "contract ENS",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "owner",
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "node",
+          "type": "bytes32"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "recordExists",
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "node",
+          "type": "bytes32"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "resolver",
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "node",
+          "type": "bytes32"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "setApprovalForAll",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "approved",
+          "type": "bool"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "setOwner",
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "node",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "setRecord",
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "node",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "resolver",
+          "type": "address"
+        },
+        {
+          "internalType": "uint64",
+          "name": "ttl",
+          "type": "uint64"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "setResolver",
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "node",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "resolver",
+          "type": "address"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "setSubnodeOwner",
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "node",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "label",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "setSubnodeRecord",
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "node",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "label",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "resolver",
+          "type": "address"
+        },
+        {
+          "internalType": "uint64",
+          "name": "ttl",
+          "type": "uint64"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "setTTL",
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "node",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint64",
+          "name": "ttl",
+          "type": "uint64"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "ttl",
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "node",
+          "type": "bytes32"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "uint64",
+          "name": "",
+          "type": "uint64"
+        }
+      ],
+      "stateMutability": "view"
+    }
+  ]
+}

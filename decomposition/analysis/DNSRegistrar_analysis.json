@@ -1,0 +1,391 @@
+{
+  "name": "DNSRegistrar",
+  "address": "0xB32cB5677a7C971689228EC835800432B339bA2B",
+  "chain": null,
+  "source_files": [
+    "source.sol",
+    "sources/contracts/utils/HexUtils.sol",
+    "sources/contracts/resolvers/ResolverBase.sol",
+    "sources/contracts/resolvers/profiles/IVersionableResolver.sol",
+    "sources/contracts/resolvers/profiles/IAddressResolver.sol",
+    "sources/contracts/resolvers/profiles/IAddrResolver.sol",
+    "sources/contracts/resolvers/profiles/AddrResolver.sol",
+    "sources/contracts/dnsregistrar/IDNSRegistrar.sol",
+    "sources/contracts/dnsregistrar/DNSRegistrar.sol",
+    "sources/contracts/dnsregistrar/PublicSuffixList.sol",
+    "sources/contracts/dnsregistrar/DNSClaimChecker.sol",
+    "sources/contracts/dnsregistrar/mocks/DummyDnsRegistrarDNSSEC.sol",
+    "sources/contracts/registry/ENS.sol",
+    "sources/contracts/registry/ENSRegistry.sol",
+    "sources/contracts/root/Root.sol",
+    "sources/contracts/root/Controllable.sol",
+    "sources/contracts/dnssec-oracle/DNSSEC.sol",
+    "sources/contracts/dnssec-oracle/BytesUtils.sol",
+    "sources/contracts/dnssec-oracle/RRUtils.sol",
+    "sources/@openzeppelin/contracts/access/Ownable.sol",
+    "sources/@openzeppelin/contracts/utils/Context.sol",
+    "sources/@openzeppelin/contracts/utils/introspection/ERC165.sol",
+    "sources/@openzeppelin/contracts/utils/introspection/IERC165.sol",
+    "sources/@ensdomains/buffer/contracts/Buffer.sol"
+  ],
+  "total_lines": 2414,
+  "functions": [
+    "readBytes32",
+    "setResolver",
+    "setRecord",
+    "rrs",
+    "init",
+    "resize",
+    "renounceOwnership",
+    "rdata",
+    "supportsInterface",
+    "clearRecords",
+    "_checkOwner",
+    "addressToBytes",
+    "keccak",
+    "appendBytes32",
+    "setPublicSuffixList",
+    "setTTL",
+    "nameLength",
+    "lock",
+    "base32HexDecodeWord",
+    "isPublicSuffix",
+    "getHex",
+    "setApprovalForAll",
+    "enableNode",
+    "next",
+    "_enableNode",
+    "readUint8",
+    "readUint16",
+    "appendInt",
+    "readUint32",
+    "labelCount",
+    "_transferOwnership",
+    "recordVersions",
+    "setSubnodeOwner",
+    "parseString",
+    "_msgData",
+    "hexToAddress",
+    "parseRR",
+    "done",
+    "appendUint8",
+    "iterateRRs",
+    "getOwnerAddress",
+    "setData",
+    "hexStringToBytes32",
+    "readBytes20",
+    "truncate",
+    "substring",
+    "readName",
+    "resolver",
+    "setController",
+    "isAuthorised",
+    "readSignedSet",
+    "_claim",
+    "_msgSender",
+    "progress",
+    "verifyRRSet",
+    "bytesToAddress",
+    "rrdata",
+    "readDNSKEY",
+    "transferOwnership",
+    "proveAndClaimWithResolver",
+    "computeKeytag",
+    "readBytesN",
+    "_setResolverAndTTL",
+    "addr",
+    "setAddr",
+    "appendBytes20",
+    "name",
+    "append",
+    "setOwner",
+    "fromBytes",
+    "equals",
+    "serialNumberGte",
+    "ttl",
+    "proveAndClaim",
+    "_setOwner",
+    "isSubdomainOf",
+    "isApprovedForAll",
+    "readDS",
+    "compare",
+    "find",
+    "memcpy",
+    "setSubnodeRecord",
+    "recordExists",
+    "owner",
+    "compareNames"
+  ],
+  "modifiers": [
+    "onlyOwner",
+    "onlyController",
+    "authorised"
+  ],
+  "events": [
+    "AddrChanged",
+    "ApprovalForAll",
+    "ControllerChanged",
+    "AlgorithmUpdated",
+    "OwnershipTransferred",
+    "VersionChanged",
+    "Transfer",
+    "Claim",
+    "AddressChanged",
+    "TLDLocked",
+    "NewOwner",
+    "NewPublicSuffixList",
+    "DigestUpdated",
+    "NewTTL",
+    "NewResolver"
+  ],
+  "interfaces": [
+    "IAddressResolver",
+    "IDNSRegistrar",
+    "ENS",
+    "defined",
+    "IERC165",
+    "id",
+    "IAddrResolver",
+    "IVersionableResolver",
+    "PublicSuffixList"
+  ],
+  "dependencies": [
+    "../ResolverBase.sol",
+    "../dnssec-oracle/BytesUtils.sol",
+    "../dnssec-oracle/DNSSEC.sol",
+    "../dnssec-oracle/RRUtils.sol",
+    "../registry/ENS.sol",
+    "../registry/ENSRegistry.sol",
+    "../resolvers/profiles/AddrResolver.sol",
+    "../root/Root.sol",
+    "../utils/BytesUtils.sol",
+    "../utils/Context.sol",
+    "../utils/HexUtils.sol",
+    "./BytesUtils.sol",
+    "./Controllable.sol",
+    "./DNSClaimChecker.sol",
+    "./ENS.sol",
+    "./IAddrResolver.sol",
+    "./IAddressResolver.sol",
+    "./IDNSRegistrar.sol",
+    "./IERC165.sol",
+    "./PublicSuffixList.sol",
+    "./profiles/IVersionableResolver.sol",
+    "@ensdomains/buffer/contracts/Buffer.sol",
+    "@openzeppelin/contracts/access/Ownable.sol",
+    "@openzeppelin/contracts/utils/introspection/ERC165.sol",
+    "@openzeppelin/contracts/utils/introspection/IERC165.sol"
+  ],
+  "security_patterns": {
+    "access_control": [
+      "Ownable pattern detected",
+      "Ownable pattern detected",
+      "Ownable pattern detected",
+      "Ownable pattern detected",
+      "Ownable pattern detected"
+    ],
+    "payable_functions": [
+      "addr"
+    ]
+  },
+  "potential_issues": [
+    "Uses block.timestamp (timestamp dependency)",
+    "Contains inline assembly"
+  ],
+  "abi_functions": [
+    {
+      "name": "enableNode",
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "domain",
+          "type": "bytes"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "node",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "ens",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "contract ENS",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "inceptions",
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "uint32",
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "oracle",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "contract DNSSEC",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "previousRegistrar",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "proveAndClaim",
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "name",
+          "type": "bytes"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "rrset",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "sig",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct DNSSEC.RRSetWithSignature[]",
+          "name": "input",
+          "type": "tuple[]"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "proveAndClaimWithResolver",
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "name",
+          "type": "bytes"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "rrset",
+              "type": "bytes"
+            },
+            {
+              "internalType": "bytes",
+              "name": "sig",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct DNSSEC.RRSetWithSignature[]",
+          "name": "input",
+          "type": "tuple[]"
+        },
+        {
+          "internalType": "address",
+          "name": "resolver",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "resolver",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "setPublicSuffixList",
+      "inputs": [
+        {
+          "internalType": "contract PublicSuffixList",
+          "name": "_suffixes",
+          "type": "address"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "suffixes",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "contract PublicSuffixList",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "supportsInterface",
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "interfaceID",
+          "type": "bytes4"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure"
+    }
+  ]
+}

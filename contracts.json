@@ -1,0 +1,172 @@
+{
+  "contracts": [
+    {
+      "name": "ArbitrumReverseResolver",
+      "address": "0x4b9572C03AAa8b0Efa4B4b0F0cc0f0992bEDB898",
+      "chain": "arbitrum"
+    },
+    {
+      "name": "BaseRegistrarImplementation",
+      "address": "0x57f1887a8BF19b14fC0dF6Fd9B2acc9Af147eA85",
+      "chain": "mainnet"
+    },
+    {
+      "name": "BaseReverseResolver",
+      "address": "0xc800DBc8ff9796E58EfBa2d7b35028DdD1997E5e",
+      "chain": "base"
+    },
+    {
+      "name": "BatchGatewayProvider",
+      "address": "0xd1E3FAc3837b85437530B8B5244E4deF43219C04",
+      "chain": "mainnet"
+    },
+    {
+      "name": "DNSRegistrar",
+      "address": "0xB32cB5677a7C971689228EC835800432B339bA2B",
+      "chain": "mainnet"
+    },
+    {
+      "name": "DNSSECImpl",
+      "address": "0x0fc3152971714E5ed7723FAFa650F86A4BaF30C5",
+      "chain": "mainnet"
+    },
+    {
+      "name": "DefaultReverseRegistrar",
+      "address": "0x283F227c4Bd38ecE252C4Ae7ECE650B0e913f1f9",
+      "chain": "mainnet"
+    },
+    {
+      "name": "DefaultReverseResolver",
+      "address": "0xA7d635c8de9a58a228AA69353a1699C7Cc240DCF",
+      "chain": "mainnet"
+    },
+    {
+      "name": "ENSRegistry",
+      "address": "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e",
+      "chain": "mainnet"
+    },
+    {
+      "name": "ETHRegistrarController",
+      "address": "0x59E16fcCd424Cc24e280Be16E11Bcd56fb0CE547",
+      "chain": "mainnet"
+    },
+    {
+      "name": "ExponentialPremiumPriceOracle",
+      "address": "0x7542565191d074cE84fBfA92cAE13AcB84788CA9",
+      "chain": "mainnet"
+    },
+    {
+      "name": "ExtendedDNSResolver",
+      "address": "0x08769D484a7Cd9c4A98E928D9E270221F3E8578c",
+      "chain": "mainnet"
+    },
+    {
+      "name": "LineaReverseResolver",
+      "address": "0x0Ce08a41bdb10420FB5Cac7Da8CA508EA313aeF8",
+      "chain": "linea"
+    },
+    {
+      "name": "MigrationHelper",
+      "address": "0xeA6407e845Bf7a462FBdb3584728a9f617dA7FE9",
+      "chain": "mainnet"
+    },
+    {
+      "name": "NameWrapper",
+      "address": "0xD4416b13d2b3a9aBae7AcD5D6C2BbDBE25686401",
+      "chain": "mainnet"
+    },
+    {
+      "name": "OffchainDNSResolver",
+      "address": "0xF142B308cF687d4358410a4cB885513b30A42025",
+      "chain": "mainnet"
+    },
+    {
+      "name": "OptimismReverseResolver",
+      "address": "0xF9Edb1A21867aC11b023CE34Abad916D29aBF107",
+      "chain": "optimism"
+    },
+    {
+      "name": "P256SHA256Algorithm",
+      "address": "0x0faa24e538bA4620165933f68a9d142f79A68091",
+      "chain": "mainnet"
+    },
+    {
+      "name": "PublicResolver",
+      "address": "0xF29100983E058B709F3D539b0c765937B804AC15",
+      "chain": "mainnet"
+    },
+    {
+      "name": "RSASHA1Algorithm",
+      "address": "0x6ca8624Bc207F043D140125486De0f7E624e37A1",
+      "chain": "mainnet"
+    },
+    {
+      "name": "RSASHA256Algorithm",
+      "address": "0x9D1B5a639597f558bC37Cf81813724076c5C1e96",
+      "chain": "mainnet"
+    },
+    {
+      "name": "ReverseRegistrar",
+      "address": "0xa58E81fe9b61B5c3fE2AFD33CF304c454AbFc7Cb",
+      "chain": "mainnet"
+    },
+    {
+      "name": "Root",
+      "address": "0xaB528d626EC275E3faD363fF1393A41F581c5897",
+      "chain": "mainnet"
+    },
+    {
+      "name": "SHA1Digest",
+      "address": "0x9c9fcEa62bD0A723b62A2F1e98dE0Ee3df813619",
+      "chain": "mainnet"
+    },
+    {
+      "name": "SHA1NSEC3Digest",
+      "address": "0x849851A7683cfF52De5F50C712C0606FEf6A3e8f",
+      "chain": "mainnet"
+    },
+    {
+      "name": "SHA256Digest",
+      "address": "0xCFe6edBD47a032585834A6921D1d05CB70FcC36d",
+      "chain": "mainnet"
+    },
+    {
+      "name": "ScrollReverseResolver",
+      "address": "0xC4842814cA523E481Ca5aa85F719FEd1E9CaC614",
+      "chain": "scroll"
+    },
+    {
+      "name": "SimplePublicSuffixList",
+      "address": "0x823BDa9cA8c47d072376eCD595530c8fb2fAa3ED",
+      "chain": "mainnet"
+    },
+    {
+      "name": "StaticBulkRenewal",
+      "address": "0xc649947a460B135e6B9a70Ee2FB429aDBB529290",
+      "chain": "mainnet"
+    },
+    {
+      "name": "StaticMetadataService",
+      "address": "0x3A368e3D5F19aF3DE594A9fC2CFfc6e256a616c7",
+      "chain": "mainnet"
+    },
+    {
+      "name": "TLDPublicSuffixList",
+      "address": "0x7A72fEFd970A7726c4823623d88E9f3eFA1c300C",
+      "chain": "mainnet"
+    },
+    {
+      "name": "UniversalResolver",
+      "address": "0xED73a03F19e8D849E44a39252d222c6ad5217E1e",
+      "chain": "mainnet"
+    },
+    {
+      "name": "WrappedETHRegistrarController",
+      "address": "0x253553366Da8546fC250F225fe3d25d0C782303b",
+      "chain": "mainnet"
+    }
+  ]
+}
+
+
+

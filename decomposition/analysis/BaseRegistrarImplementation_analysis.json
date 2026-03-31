@@ -1,0 +1,569 @@
+{
+  "name": "BaseRegistrarImplementation",
+  "address": "0x57f1887a8BF19b14fC0dF6Fd9B2acc9Af147eA85",
+  "chain": null,
+  "source_files": [
+    "source.sol",
+    "sources/contracts/ethregistrar/BaseRegistrarImplementation.sol",
+    "sources/contracts/ethregistrar/IBaseRegistrar.sol"
+  ],
+  "total_lines": 1042,
+  "functions": [
+    "_checkOnERC721Received",
+    "transferFrom",
+    "setResolver",
+    "ownerOf",
+    "resolver",
+    "setRecord",
+    "getApproved",
+    "renew",
+    "setOwner",
+    "registerOnly",
+    "div",
+    "renounceOwnership",
+    "_isApprovedOrOwner",
+    "approve",
+    "_transferOwnership",
+    "addController",
+    "register",
+    "nameExpires",
+    "ttl",
+    "_burn",
+    "setSubnodeOwner",
+    "_register",
+    "_transferFrom",
+    "add",
+    "safeTransferFrom",
+    "supportsInterface",
+    "isContract",
+    "_registerInterface",
+    "_mint",
+    "available",
+    "isApprovedForAll",
+    "transferOwnership",
+    "mod",
+    "reclaim",
+    "removeController",
+    "isOwner",
+    "_exists",
+    "setTTL",
+    "setSubnodeRecord",
+    "mul",
+    "sub",
+    "onERC721Received",
+    "recordExists",
+    "owner",
+    "balanceOf",
+    "setApprovalForAll",
+    "_clearApproval"
+  ],
+  "modifiers": [
+    "onlyController",
+    "onlyOwner",
+    "live"
+  ],
+  "events": [
+    "ControllerAdded",
+    "NameRegistered",
+    "ApprovalForAll",
+    "OwnershipTransferred",
+    "ControllerRemoved",
+    "NameRenewed",
+    "Transfer",
+    "NewOwner",
+    "Approval",
+    "NameMigrated",
+    "NewTTL",
+    "NewResolver"
+  ],
+  "interfaces": [
+    "identifier",
+    "ENS",
+    "IERC165",
+    "id",
+    "IBaseRegistrar"
+  ],
+  "dependencies": [
+    "../registry/ENS.sol",
+    "./IBaseRegistrar.sol",
+    "@openzeppelin/contracts/access/Ownable.sol",
+    "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+    "@openzeppelin/contracts/token/ERC721/IERC721.sol"
+  ],
+  "security_patterns": {
+    "access_control": [
+      "Ownable pattern detected",
+      "Ownable pattern detected"
+    ]
+  },
+  "potential_issues": [
+    "Uses block.timestamp (timestamp dependency)",
+    "Contains inline assembly"
+  ],
+  "abi_functions": [
+    {
+      "name": "GRACE_PERIOD",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "addController",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "controller",
+          "type": "address"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "approve",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "available",
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "balanceOf",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "baseNode",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "controllers",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "ens",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "contract ENS",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "getApproved",
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "isApprovedForAll",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "isOwner",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "nameExpires",
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "owner",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "ownerOf",
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "reclaim",
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "register",
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "duration",
+          "type": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "registerOnly",
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "duration",
+          "type": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "removeController",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "controller",
+          "type": "address"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "renew",
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "duration",
+          "type": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "renounceOwnership",
+      "inputs": [],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "safeTransferFrom",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "safeTransferFrom",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_data",
+          "type": "bytes"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "setApprovalForAll",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "approved",
+          "type": "bool"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "setResolver",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "resolver",
+          "type": "address"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "supportsInterface",
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "interfaceID",
+          "type": "bytes4"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "transferFrom",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "transferOwnership",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    }
+  ]
+}

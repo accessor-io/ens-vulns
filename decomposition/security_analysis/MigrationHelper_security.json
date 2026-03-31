@@ -1,0 +1,163 @@
+{
+  "contract": "MigrationHelper",
+  "issues": [
+    {
+      "type": "reentrancy",
+      "severity": "HIGH",
+      "contract": "MigrationHelper",
+      "file": "source.sol",
+      "function": "migrateNames",
+      "issue": "Function 'migrateNames' makes external calls and may be vulnerable to reentrancy",
+      "recommendation": "Use ReentrancyGuard or follow checks-effects-interactions pattern"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "MigrationHelper",
+      "file": "source.sol",
+      "function": "setMigrationTarget",
+      "issue": "Function 'setMigrationTarget' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "MigrationHelper",
+      "file": "source.sol",
+      "function": "migrateNames",
+      "issue": "Function 'migrateNames' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "MigrationHelper",
+      "file": "source.sol",
+      "function": "migrateWrappedNames",
+      "issue": "Function 'migrateWrappedNames' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "MigrationHelper",
+      "file": "sources/contracts/wrapper/Controllable.sol",
+      "function": "setController",
+      "issue": "Function 'setController' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "reentrancy",
+      "severity": "HIGH",
+      "contract": "MigrationHelper",
+      "file": "sources/contracts/utils/MigrationHelper.sol",
+      "function": "migrateNames",
+      "issue": "Function 'migrateNames' makes external calls and may be vulnerable to reentrancy",
+      "recommendation": "Use ReentrancyGuard or follow checks-effects-interactions pattern"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "MigrationHelper",
+      "file": "sources/contracts/utils/MigrationHelper.sol",
+      "function": "setMigrationTarget",
+      "issue": "Function 'setMigrationTarget' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "MigrationHelper",
+      "file": "sources/contracts/utils/MigrationHelper.sol",
+      "function": "migrateNames",
+      "issue": "Function 'migrateNames' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "MigrationHelper",
+      "file": "sources/contracts/utils/MigrationHelper.sol",
+      "function": "migrateWrappedNames",
+      "issue": "Function 'migrateWrappedNames' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "MigrationHelper",
+      "file": "sources/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "function": "safeTransferFrom",
+      "issue": "Function 'safeTransferFrom' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "MigrationHelper",
+      "file": "sources/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "function": "safeTransferFrom",
+      "issue": "Function 'safeTransferFrom' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "MigrationHelper",
+      "file": "sources/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "function": "transferFrom",
+      "issue": "Function 'transferFrom' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "MigrationHelper",
+      "file": "sources/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "function": "approve",
+      "issue": "Function 'approve' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "MigrationHelper",
+      "file": "sources/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "function": "setApprovalForAll",
+      "issue": "Function 'setApprovalForAll' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "MigrationHelper",
+      "file": "sources/@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+      "function": "setApprovalForAll",
+      "issue": "Function 'setApprovalForAll' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "MigrationHelper",
+      "file": "sources/@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+      "function": "safeTransferFrom",
+      "issue": "Function 'safeTransferFrom' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "MigrationHelper",
+      "file": "sources/@openzeppelin/contracts/access/Ownable.sol",
+      "function": "_transferOwnership",
+      "issue": "Function '_transferOwnership' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    }
+  ],
+  "total_issues": 17,
+  "critical": 0,
+  "high": 2,
+  "medium": 15,
+  "low": 0
+}

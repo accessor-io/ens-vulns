@@ -1,0 +1,945 @@
+{
+  "contract": "NameWrapper",
+  "issues": [
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "approve",
+      "issue": "Public/external function 'approve' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "wrapETH2LD",
+      "issue": "Public/external function 'wrapETH2LD' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "wrap",
+      "issue": "Public/external function 'wrap' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "unwrapETH2LD",
+      "issue": "Public/external function 'unwrapETH2LD' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "unwrap",
+      "issue": "Public/external function 'unwrap' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "setFuses",
+      "issue": "Public/external function 'setFuses' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "extendExpiry",
+      "issue": "Public/external function 'extendExpiry' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "upgrade",
+      "issue": "Public/external function 'upgrade' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "setChildFuses",
+      "issue": "Public/external function 'setChildFuses' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "setSubnodeOwner",
+      "issue": "Public/external function 'setSubnodeOwner' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "setSubnodeRecord",
+      "issue": "Public/external function 'setSubnodeRecord' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "setRecord",
+      "issue": "Public/external function 'setRecord' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "onERC721Received",
+      "issue": "Public/external function 'onERC721Received' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "reentrancy",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "wrapETH2LD",
+      "issue": "Function 'wrapETH2LD' makes external calls and may be vulnerable to reentrancy",
+      "recommendation": "Use ReentrancyGuard or follow checks-effects-interactions pattern"
+    },
+    {
+      "type": "reentrancy",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "unwrapETH2LD",
+      "issue": "Function 'unwrapETH2LD' makes external calls and may be vulnerable to reentrancy",
+      "recommendation": "Use ReentrancyGuard or follow checks-effects-interactions pattern"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "approve",
+      "issue": "Function 'approve' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "wrapETH2LD",
+      "issue": "Function 'wrapETH2LD' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "registerAndWrapETH2LD",
+      "issue": "Function 'registerAndWrapETH2LD' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "wrap",
+      "issue": "Function 'wrap' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "unwrapETH2LD",
+      "issue": "Function 'unwrapETH2LD' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "unwrap",
+      "issue": "Function 'unwrap' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "setSubnodeOwner",
+      "issue": "Function 'setSubnodeOwner' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "setSubnodeRecord",
+      "issue": "Function 'setSubnodeRecord' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "setRecord",
+      "issue": "Function 'setRecord' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "setResolver",
+      "issue": "Function 'setResolver' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "onERC721Received",
+      "issue": "Function 'onERC721Received' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "_mint",
+      "issue": "Function '_mint' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "_wrap",
+      "issue": "Function '_wrap' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "_storeNameAndWrap",
+      "issue": "Function '_storeNameAndWrap' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "_updateName",
+      "issue": "Function '_updateName' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "_wrapETH2LD",
+      "issue": "Function '_wrapETH2LD' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "_unwrap",
+      "issue": "Function '_unwrap' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "_setFuses",
+      "issue": "Function '_setFuses' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "source.sol",
+      "function": "_setData",
+      "issue": "Function '_setData' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "approve",
+      "issue": "Public/external function 'approve' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "wrapETH2LD",
+      "issue": "Public/external function 'wrapETH2LD' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "wrap",
+      "issue": "Public/external function 'wrap' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "unwrapETH2LD",
+      "issue": "Public/external function 'unwrapETH2LD' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "unwrap",
+      "issue": "Public/external function 'unwrap' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "setFuses",
+      "issue": "Public/external function 'setFuses' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "extendExpiry",
+      "issue": "Public/external function 'extendExpiry' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "upgrade",
+      "issue": "Public/external function 'upgrade' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "setChildFuses",
+      "issue": "Public/external function 'setChildFuses' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "setSubnodeOwner",
+      "issue": "Public/external function 'setSubnodeOwner' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "setSubnodeRecord",
+      "issue": "Public/external function 'setSubnodeRecord' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "setRecord",
+      "issue": "Public/external function 'setRecord' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "onERC721Received",
+      "issue": "Public/external function 'onERC721Received' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "reentrancy",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "wrapETH2LD",
+      "issue": "Function 'wrapETH2LD' makes external calls and may be vulnerable to reentrancy",
+      "recommendation": "Use ReentrancyGuard or follow checks-effects-interactions pattern"
+    },
+    {
+      "type": "reentrancy",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "unwrapETH2LD",
+      "issue": "Function 'unwrapETH2LD' makes external calls and may be vulnerable to reentrancy",
+      "recommendation": "Use ReentrancyGuard or follow checks-effects-interactions pattern"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "approve",
+      "issue": "Function 'approve' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "wrapETH2LD",
+      "issue": "Function 'wrapETH2LD' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "registerAndWrapETH2LD",
+      "issue": "Function 'registerAndWrapETH2LD' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "wrap",
+      "issue": "Function 'wrap' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "unwrapETH2LD",
+      "issue": "Function 'unwrapETH2LD' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "unwrap",
+      "issue": "Function 'unwrap' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "setSubnodeOwner",
+      "issue": "Function 'setSubnodeOwner' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "setSubnodeRecord",
+      "issue": "Function 'setSubnodeRecord' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "setRecord",
+      "issue": "Function 'setRecord' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "setResolver",
+      "issue": "Function 'setResolver' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "onERC721Received",
+      "issue": "Function 'onERC721Received' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "_mint",
+      "issue": "Function '_mint' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "_wrap",
+      "issue": "Function '_wrap' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "_storeNameAndWrap",
+      "issue": "Function '_storeNameAndWrap' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "_updateName",
+      "issue": "Function '_updateName' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "_wrapETH2LD",
+      "issue": "Function '_wrapETH2LD' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "_unwrap",
+      "issue": "Function '_unwrap' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "_setFuses",
+      "issue": "Function '_setFuses' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/NameWrapper.sol",
+      "function": "_setData",
+      "issue": "Function '_setData' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/ERC1155Fuse.sol",
+      "function": "approve",
+      "issue": "Public/external function 'approve' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/ERC1155Fuse.sol",
+      "function": "setApprovalForAll",
+      "issue": "Public/external function 'setApprovalForAll' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/ERC1155Fuse.sol",
+      "function": "safeTransferFrom",
+      "issue": "Public/external function 'safeTransferFrom' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/ERC1155Fuse.sol",
+      "function": "safeBatchTransferFrom",
+      "issue": "Public/external function 'safeBatchTransferFrom' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/ERC1155Fuse.sol",
+      "function": "approve",
+      "issue": "Function 'approve' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/ERC1155Fuse.sol",
+      "function": "setApprovalForAll",
+      "issue": "Function 'setApprovalForAll' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/ERC1155Fuse.sol",
+      "function": "_setData",
+      "issue": "Function '_setData' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/ERC1155Fuse.sol",
+      "function": "_transfer",
+      "issue": "Function '_transfer' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/ERC1155Fuse.sol",
+      "function": "_doSafeTransferAcceptanceCheck",
+      "issue": "Function '_doSafeTransferAcceptanceCheck' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/ERC1155Fuse.sol",
+      "function": "_doSafeBatchTransferAcceptanceCheck",
+      "issue": "Function '_doSafeBatchTransferAcceptanceCheck' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/ERC1155Fuse.sol",
+      "function": "_approve",
+      "issue": "Function '_approve' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/Controllable.sol",
+      "function": "setController",
+      "issue": "Function 'setController' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/mocks/UpgradedNameWrapperMock.sol",
+      "function": "wrapFromUpgrade",
+      "issue": "Public/external function 'wrapFromUpgrade' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/mocks/UpgradedNameWrapperMock.sol",
+      "function": "wrapFromUpgrade",
+      "issue": "Function 'wrapFromUpgrade' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/test/TestNameWrapperReentrancy.sol",
+      "function": "onERC1155Received",
+      "issue": "Public/external function 'onERC1155Received' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/test/TestNameWrapperReentrancy.sol",
+      "function": "onERC1155Received",
+      "issue": "Function 'onERC1155Received' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/wrapper/test/TestNameWrapperReentrancy.sol",
+      "function": "onERC1155BatchReceived",
+      "issue": "Function 'onERC1155BatchReceived' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/contracts/utils/ERC20Recoverable.sol",
+      "function": "recoverFunds",
+      "issue": "Function 'recoverFunds' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "function": "transfer",
+      "issue": "Function 'transfer' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "function": "approve",
+      "issue": "Function 'approve' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "function": "safeTransferFrom",
+      "issue": "Function 'safeTransferFrom' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "function": "safeTransferFrom",
+      "issue": "Function 'safeTransferFrom' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "function": "transferFrom",
+      "issue": "Function 'transferFrom' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "function": "approve",
+      "issue": "Function 'approve' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+      "function": "setApprovalForAll",
+      "issue": "Function 'setApprovalForAll' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+      "function": "setApprovalForAll",
+      "issue": "Function 'setApprovalForAll' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+      "function": "safeTransferFrom",
+      "issue": "Function 'safeTransferFrom' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/@openzeppelin/contracts/access/Ownable.sol",
+      "function": "_transferOwnership",
+      "issue": "Function '_transferOwnership' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/@openzeppelin/contracts/utils/Address.sol",
+      "function": "sendValue",
+      "issue": "Function 'sendValue' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/@openzeppelin/contracts/utils/Address.sol",
+      "function": "functionCall",
+      "issue": "Function 'functionCall' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/@openzeppelin/contracts/utils/Address.sol",
+      "function": "functionCall",
+      "issue": "Function 'functionCall' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/@openzeppelin/contracts/utils/Address.sol",
+      "function": "functionCallWithValue",
+      "issue": "Function 'functionCallWithValue' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/@openzeppelin/contracts/utils/Address.sol",
+      "function": "functionCallWithValue",
+      "issue": "Function 'functionCallWithValue' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/@openzeppelin/contracts/utils/Address.sol",
+      "function": "functionDelegateCall",
+      "issue": "Function 'functionDelegateCall' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "NameWrapper",
+      "file": "sources/@openzeppelin/contracts/utils/Address.sol",
+      "function": "functionDelegateCall",
+      "issue": "Function 'functionDelegateCall' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "dangerous_pattern",
+      "severity": "CRITICAL",
+      "contract": "NameWrapper",
+      "file": "sources/@openzeppelin/contracts/utils/Address.sol",
+      "issue": "delegatecall usage - can execute arbitrary code",
+      "recommendation": "Audit delegatecall usage carefully"
+    }
+  ],
+  "total_issues": 104,
+  "critical": 1,
+  "high": 36,
+  "medium": 67,
+  "low": 0
+}

@@ -1,0 +1,74 @@
+{
+  "name": "SHA1Digest",
+  "address": "0x9c9fcEa62bD0A723b62A2F1e98dE0Ee3df813619",
+  "chain": null,
+  "source_files": [
+    "source.sol",
+    "sources/contracts/dnssec-oracle/BytesUtils.sol",
+    "sources/contracts/dnssec-oracle/digests/SHA1Digest.sol",
+    "sources/contracts/dnssec-oracle/digests/Digest.sol",
+    "sources/@ensdomains/solsha1/contracts/SHA1.sol"
+  ],
+  "total_lines": 568,
+  "functions": [
+    "readBytes20",
+    "readBytes32",
+    "substring",
+    "readBytesN",
+    "sha1",
+    "readUint8",
+    "readUint32",
+    "readUint16",
+    "base32HexDecodeWord",
+    "memcpy",
+    "readword",
+    "compare",
+    "find",
+    "keccak",
+    "equals",
+    "verify"
+  ],
+  "modifiers": [],
+  "events": [
+    "Debug"
+  ],
+  "interfaces": [
+    "for",
+    "Digest"
+  ],
+  "dependencies": [
+    "../../utils/BytesUtils.sol",
+    "../BytesUtils.sol",
+    "./Digest.sol",
+    "@ensdomains/solsha1/contracts/SHA1.sol"
+  ],
+  "security_patterns": {},
+  "potential_issues": [
+    "Contains inline assembly"
+  ],
+  "abi_functions": [
+    {
+      "name": "verify",
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "hash",
+          "type": "bytes"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure"
+    }
+  ]
+}

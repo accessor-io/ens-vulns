@@ -1,0 +1,14 @@
+{
+  "name": "P256SHA256Algorithm",
+  "address": "0x0faa24e538bA4620165933f68a9d142f79A68091",
+  "compiler_version": "v0.8.17+commit.8df45f5f",
+  "optimization_used": "1",
+  "runs": "1200",
+  "constructor_arguments": "",
+  "evm_version": "london",
+  "library": "",
+  "license": "MIT",
+  "proxy": "0",
+  "implementation": "",
+  "swarm_source": ""
+}

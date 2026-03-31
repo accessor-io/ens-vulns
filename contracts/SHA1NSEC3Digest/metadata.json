@@ -1,0 +1,14 @@
+{
+  "name": "SHA1NSEC3Digest",
+  "address": "0x849851A7683cfF52De5F50C712C0606FEf6A3e8f",
+  "compiler_version": "v0.8.4+commit.c7e474f2",
+  "optimization_used": "0",
+  "runs": "200",
+  "constructor_arguments": "",
+  "evm_version": "Default",
+  "library": "",
+  "license": "MIT",
+  "proxy": "0",
+  "implementation": "",
+  "swarm_source": ""
+}

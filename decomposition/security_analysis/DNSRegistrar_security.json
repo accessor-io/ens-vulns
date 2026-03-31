@@ -1,0 +1,208 @@
+{
+  "contract": "DNSRegistrar",
+  "issues": [
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "DNSRegistrar",
+      "file": "source.sol",
+      "function": "proveAndClaim",
+      "issue": "Public/external function 'proveAndClaim' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "DNSRegistrar",
+      "file": "source.sol",
+      "function": "proveAndClaimWithResolver",
+      "issue": "Public/external function 'proveAndClaimWithResolver' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "DNSRegistrar",
+      "file": "source.sol",
+      "function": "proveAndClaimWithResolver",
+      "issue": "Function 'proveAndClaimWithResolver' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "DNSRegistrar",
+      "file": "sources/contracts/resolvers/profiles/AddrResolver.sol",
+      "function": "setAddr",
+      "issue": "Function 'setAddr' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "DNSRegistrar",
+      "file": "sources/contracts/dnsregistrar/DNSRegistrar.sol",
+      "function": "proveAndClaim",
+      "issue": "Public/external function 'proveAndClaim' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "DNSRegistrar",
+      "file": "sources/contracts/dnsregistrar/DNSRegistrar.sol",
+      "function": "proveAndClaimWithResolver",
+      "issue": "Public/external function 'proveAndClaimWithResolver' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "DNSRegistrar",
+      "file": "sources/contracts/dnsregistrar/DNSRegistrar.sol",
+      "function": "proveAndClaimWithResolver",
+      "issue": "Function 'proveAndClaimWithResolver' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "DNSRegistrar",
+      "file": "sources/contracts/dnsregistrar/mocks/DummyDnsRegistrarDNSSEC.sol",
+      "function": "setData",
+      "issue": "Public/external function 'setData' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "DNSRegistrar",
+      "file": "sources/contracts/registry/ENSRegistry.sol",
+      "function": "setSubnodeRecord",
+      "issue": "Public/external function 'setSubnodeRecord' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "access_control",
+      "severity": "HIGH",
+      "contract": "DNSRegistrar",
+      "file": "sources/contracts/registry/ENSRegistry.sol",
+      "function": "setApprovalForAll",
+      "issue": "Public/external function 'setApprovalForAll' may lack proper access control",
+      "recommendation": "Add access control modifier or verify function is intentionally public"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "DNSRegistrar",
+      "file": "sources/contracts/registry/ENSRegistry.sol",
+      "function": "setRecord",
+      "issue": "Function 'setRecord' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "DNSRegistrar",
+      "file": "sources/contracts/registry/ENSRegistry.sol",
+      "function": "setSubnodeRecord",
+      "issue": "Function 'setSubnodeRecord' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "DNSRegistrar",
+      "file": "sources/contracts/registry/ENSRegistry.sol",
+      "function": "setOwner",
+      "issue": "Function 'setOwner' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "DNSRegistrar",
+      "file": "sources/contracts/registry/ENSRegistry.sol",
+      "function": "setSubnodeOwner",
+      "issue": "Function 'setSubnodeOwner' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "DNSRegistrar",
+      "file": "sources/contracts/registry/ENSRegistry.sol",
+      "function": "setResolver",
+      "issue": "Function 'setResolver' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "DNSRegistrar",
+      "file": "sources/contracts/registry/ENSRegistry.sol",
+      "function": "setApprovalForAll",
+      "issue": "Function 'setApprovalForAll' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "DNSRegistrar",
+      "file": "sources/contracts/registry/ENSRegistry.sol",
+      "function": "_setOwner",
+      "issue": "Function '_setOwner' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "DNSRegistrar",
+      "file": "sources/contracts/registry/ENSRegistry.sol",
+      "function": "_setResolverAndTTL",
+      "issue": "Function '_setResolverAndTTL' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "DNSRegistrar",
+      "file": "sources/contracts/root/Root.sol",
+      "function": "setSubnodeOwner",
+      "issue": "Function 'setSubnodeOwner' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "DNSRegistrar",
+      "file": "sources/contracts/root/Root.sol",
+      "function": "setResolver",
+      "issue": "Function 'setResolver' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "DNSRegistrar",
+      "file": "sources/contracts/root/Controllable.sol",
+      "function": "setController",
+      "issue": "Function 'setController' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    },
+    {
+      "type": "input_validation",
+      "severity": "MEDIUM",
+      "contract": "DNSRegistrar",
+      "file": "sources/@openzeppelin/contracts/access/Ownable.sol",
+      "function": "_transferOwnership",
+      "issue": "Function '_transferOwnership' accepts address parameter but may not validate for zero address",
+      "recommendation": "Add require(address != address(0)) check"
+    }
+  ],
+  "total_issues": 22,
+  "critical": 0,
+  "high": 7,
+  "medium": 15,
+  "low": 0
+}

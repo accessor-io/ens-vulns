@@ -1,0 +1,14 @@
+{
+  "name": "ReverseRegistrar",
+  "address": "0xa58E81fe9b61B5c3fE2AFD33CF304c454AbFc7Cb",
+  "compiler_version": "v0.8.17+commit.8df45f5f",
+  "optimization_used": "1",
+  "runs": "1300",
+  "constructor_arguments": "",
+  "evm_version": "Default",
+  "library": "",
+  "license": "MIT",
+  "proxy": "0",
+  "implementation": "",
+  "swarm_source": ""
+}

@@ -1,0 +1,20 @@
+{
+  "reentrancy_window": {
+    "start": "Line 308 - External resolver call",
+    "end": "Line 313 - NFT transfer",
+    "duration": "Between external call and NFT transfer"
+  },
+  "state_at_reentrancy": {
+    "commitment": "DELETED",
+    "name_owner": "address(this)",
+    "nft_owner": "address(this) (not yet transferred)"
+  },
+  "attack_scenarios": {
+    "re_register_same": "PREVENTED - commitment deleted, name registered",
+    "re_register_different": "PREVENTED - name already registered",
+    "other_functions": "POSSIBLE - depends on function",
+    "state_manipulation": "NEEDS ANALYSIS"
+  },
+  "risk_level": "LOW-MEDIUM",
+  "recommendation": "Add ReentrancyGuard for defense in depth"
+}

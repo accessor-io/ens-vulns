@@ -1,0 +1,68 @@
+{
+  "name": "SHA256Digest",
+  "address": "0xCFe6edBD47a032585834A6921D1d05CB70FcC36d",
+  "chain": null,
+  "source_files": [
+    "source.sol",
+    "sources/contracts/dnssec-oracle/BytesUtils.sol",
+    "sources/contracts/dnssec-oracle/digests/SHA256Digest.sol",
+    "sources/contracts/dnssec-oracle/digests/Digest.sol"
+  ],
+  "total_lines": 457,
+  "functions": [
+    "readBytes20",
+    "readBytes32",
+    "substring",
+    "readBytesN",
+    "readUint8",
+    "readUint32",
+    "readUint16",
+    "base32HexDecodeWord",
+    "memcpy",
+    "compare",
+    "find",
+    "keccak",
+    "equals",
+    "verify"
+  ],
+  "modifiers": [],
+  "events": [],
+  "interfaces": [
+    "for",
+    "Digest"
+  ],
+  "dependencies": [
+    "../../utils/BytesUtils.sol",
+    "../BytesUtils.sol",
+    "./Digest.sol"
+  ],
+  "security_patterns": {},
+  "potential_issues": [
+    "Contains inline assembly"
+  ],
+  "abi_functions": [
+    {
+      "name": "verify",
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "hash",
+          "type": "bytes"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure"
+    }
+  ]
+}

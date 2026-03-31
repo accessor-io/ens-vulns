@@ -1,0 +1,248 @@
+{
+  "name": "ExponentialPremiumPriceOracle",
+  "address": "0x7542565191d074cE84fBfA92cAE13AcB84788CA9",
+  "chain": null,
+  "source_files": [
+    "source.sol",
+    "sources/contracts/ethregistrar/StablePriceOracle.sol",
+    "sources/contracts/ethregistrar/IPriceOracle.sol",
+    "sources/contracts/ethregistrar/ExponentialPremiumPriceOracle.sol",
+    "sources/contracts/ethregistrar/StringUtils.sol",
+    "sources/@openzeppelin/contracts/access/Ownable.sol",
+    "sources/@openzeppelin/contracts/utils/Context.sol",
+    "sources/@openzeppelin/contracts/utils/introspection/IERC165.sol"
+  ],
+  "total_lines": 566,
+  "functions": [
+    "_premium",
+    "weiToAttoUSD",
+    "_msgSender",
+    "latestAnswer",
+    "transferOwnership",
+    "_transferOwnership",
+    "_checkOwner",
+    "price",
+    "addFractionalPremium",
+    "premium",
+    "owner",
+    "decayedPremium",
+    "_msgData",
+    "strlen",
+    "supportsInterface",
+    "renounceOwnership",
+    "attoUSDToWei"
+  ],
+  "modifiers": [
+    "onlyOwner"
+  ],
+  "events": [
+    "OwnershipTransferred",
+    "RentPriceChanged"
+  ],
+  "interfaces": [
+    "IERC165",
+    "defined",
+    "IPriceOracle",
+    "AggregatorInterface"
+  ],
+  "dependencies": [
+    "../utils/Context.sol",
+    "./IPriceOracle.sol",
+    "./StablePriceOracle.sol",
+    "./StringUtils.sol",
+    "@openzeppelin/contracts/access/Ownable.sol",
+    "@openzeppelin/contracts/utils/introspection/IERC165.sol"
+  ],
+  "security_patterns": {
+    "access_control": [
+      "Ownable pattern detected",
+      "Ownable pattern detected"
+    ]
+  },
+  "potential_issues": [
+    "Uses block.timestamp (timestamp dependency)"
+  ],
+  "abi_functions": [
+    {
+      "name": "decayedPremium",
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "startPremium",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "elapsed",
+          "type": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure"
+    },
+    {
+      "name": "premium",
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "expires",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "duration",
+          "type": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "price",
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "expires",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "duration",
+          "type": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "base",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "premium",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct IPriceOracle.Price",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "price1Letter",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "price2Letter",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "price3Letter",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "price4Letter",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "price5Letter",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "supportsInterface",
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "interfaceID",
+          "type": "bytes4"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "usdOracle",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "contract AggregatorInterface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    }
+  ]
+}

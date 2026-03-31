@@ -1,0 +1,14 @@
+{
+  "name": "DefaultReverseResolver",
+  "address": "0xA7d635c8de9a58a228AA69353a1699C7Cc240DCF",
+  "compiler_version": "v0.8.26+commit.8a97fa7a",
+  "optimization_used": "1",
+  "runs": "1000000",
+  "constructor_arguments": "000000000000000000000000283f227c4bd38ece252c4ae7ece650b0e913f1f9",
+  "evm_version": "paris",
+  "library": "",
+  "license": "MIT",
+  "proxy": "0",
+  "implementation": "",
+  "swarm_source": ""
+}

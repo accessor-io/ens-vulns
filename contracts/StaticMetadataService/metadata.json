@@ -1,0 +1,14 @@
+{
+  "name": "StaticMetadataService",
+  "address": "0x3A368e3D5F19aF3DE594A9fC2CFfc6e256a616c7",
+  "compiler_version": "v0.8.17+commit.8df45f5f",
+  "optimization_used": "1",
+  "runs": "1300",
+  "constructor_arguments": "",
+  "evm_version": "Default",
+  "library": "",
+  "license": "MIT",
+  "proxy": "0",
+  "implementation": "",
+  "swarm_source": ""
+}

@@ -1,0 +1,302 @@
+{
+  "name": "MigrationHelper",
+  "address": "0xeA6407e845Bf7a462FBdb3584728a9f617dA7FE9",
+  "chain": null,
+  "source_files": [
+    "source.sol",
+    "sources/contracts/wrapper/INameWrapper.sol",
+    "sources/contracts/wrapper/INameWrapperUpgrade.sol",
+    "sources/contracts/wrapper/IMetadataService.sol",
+    "sources/contracts/wrapper/Controllable.sol",
+    "sources/contracts/utils/MigrationHelper.sol",
+    "sources/contracts/ethregistrar/IBaseRegistrar.sol",
+    "sources/contracts/registry/ENS.sol",
+    "sources/@openzeppelin/contracts/token/ERC721/IERC721.sol",
+    "sources/@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+    "sources/@openzeppelin/contracts/access/Ownable.sol",
+    "sources/@openzeppelin/contracts/utils/Context.sol",
+    "sources/@openzeppelin/contracts/utils/introspection/IERC165.sol"
+  ],
+  "total_lines": 844,
+  "functions": [
+    "migrateWrappedNames",
+    "setChildFuses",
+    "setMetadataService",
+    "isWrapped",
+    "setResolver",
+    "name",
+    "ownerOf",
+    "transferFrom",
+    "resolver",
+    "balanceOfBatch",
+    "setRecord",
+    "setFuses",
+    "getApproved",
+    "renew",
+    "setOwner",
+    "setController",
+    "renounceOwnership",
+    "allFusesBurned",
+    "ens",
+    "wrap",
+    "_msgSender",
+    "metadataService",
+    "extendExpiry",
+    "approve",
+    "addController",
+    "register",
+    "_transferOwnership",
+    "nameExpires",
+    "registrar",
+    "wrapFromUpgrade",
+    "ttl",
+    "getData",
+    "setSubnodeOwner",
+    "_msgData",
+    "unwrapETH2LD",
+    "migrateNames",
+    "registerAndWrapETH2LD",
+    "safeTransferFrom",
+    "supportsInterface",
+    "names",
+    "wrapETH2LD",
+    "available",
+    "isApprovedForAll",
+    "transferOwnership",
+    "_checkOwner",
+    "upgrade",
+    "unwrap",
+    "removeController",
+    "reclaim",
+    "setUpgradeContract",
+    "setMigrationTarget",
+    "canModifyName",
+    "setTTL",
+    "upgradeContract",
+    "setSubnodeRecord",
+    "uri",
+    "recordExists",
+    "safeBatchTransferFrom",
+    "owner",
+    "balanceOf",
+    "setApprovalForAll"
+  ],
+  "modifiers": [
+    "onlyOwner",
+    "onlyController"
+  ],
+  "events": [
+    "ControllerChanged",
+    "Approval",
+    "TransferSingle",
+    "ControllerAdded",
+    "OwnershipTransferred",
+    "NewOwner",
+    "NameWrapped",
+    "MigrationTargetUpdated",
+    "ExpiryExtended",
+    "ControllerRemoved",
+    "URI",
+    "FusesSet",
+    "TransferBatch",
+    "NameUnwrapped",
+    "NameMigrated",
+    "NameRegistered",
+    "ApprovalForAll",
+    "NameRenewed",
+    "Transfer",
+    "NewTTL",
+    "NewResolver"
+  ],
+  "interfaces": [
+    "of",
+    "IERC721",
+    "INameWrapperUpgrade",
+    "ENS",
+    "IERC165",
+    "INameWrapper",
+    "IERC1155",
+    "IBaseRegistrar",
+    "defined",
+    "IMetadataService"
+  ],
+  "dependencies": [
+    "../../utils/introspection/IERC165.sol",
+    "../ethregistrar/IBaseRegistrar.sol",
+    "../registry/ENS.sol",
+    "../utils/Context.sol",
+    "./IMetadataService.sol",
+    "./INameWrapperUpgrade.sol",
+    "@openzeppelin/contracts/access/Ownable.sol",
+    "@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+    "@openzeppelin/contracts/token/ERC721/IERC721.sol"
+  ],
+  "security_patterns": {
+    "access_control": [
+      "Ownable pattern detected",
+      "Ownable pattern detected",
+      "Ownable pattern detected",
+      "Ownable pattern detected"
+    ]
+  },
+  "potential_issues": [],
+  "abi_functions": [
+    {
+      "name": "controllers",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "migrateNames",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "nameOwner",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "tokenIds",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "migrateWrappedNames",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "nameOwner",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "tokenIds",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "migrationTarget",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "owner",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "registrar",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "contract IBaseRegistrar",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "renounceOwnership",
+      "inputs": [],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "setController",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "controller",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "active",
+          "type": "bool"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "setMigrationTarget",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "target",
+          "type": "address"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "transferOwnership",
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "name": "wrapper",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "contract INameWrapper",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    }
+  ]
+}

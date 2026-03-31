@@ -1,0 +1,265 @@
+{
+  "name": "OffchainDNSResolver",
+  "address": "0xF142B308cF687d4358410a4cB885513b30A42025",
+  "chain": null,
+  "source_files": [
+    "source.sol",
+    "sources/contracts/utils/LowLevelCallUtils.sol",
+    "sources/contracts/utils/HexUtils.sol",
+    "sources/contracts/resolvers/profiles/IExtendedResolver.sol",
+    "sources/contracts/resolvers/profiles/IAddrResolver.sol",
+    "sources/contracts/resolvers/profiles/IExtendedDNSResolver.sol",
+    "sources/contracts/dnsregistrar/OffchainDNSResolver.sol",
+    "sources/contracts/registry/ENS.sol",
+    "sources/contracts/registry/ENSRegistry.sol",
+    "sources/contracts/dnssec-oracle/DNSSEC.sol",
+    "sources/contracts/dnssec-oracle/BytesUtils.sol",
+    "sources/contracts/dnssec-oracle/RRUtils.sol",
+    "sources/@openzeppelin/contracts/utils/Address.sol",
+    "sources/@openzeppelin/contracts/utils/introspection/ERC165.sol",
+    "sources/@openzeppelin/contracts/utils/introspection/IERC165.sol",
+    "sources/@ensdomains/buffer/contracts/Buffer.sol"
+  ],
+  "total_lines": 2544,
+  "functions": [
+    "readBytes32",
+    "setResolver",
+    "setRecord",
+    "propagateRevert",
+    "rrs",
+    "init",
+    "resize",
+    "rdata",
+    "supportsInterface",
+    "isContract",
+    "_revert",
+    "keccak",
+    "functionStaticCall",
+    "appendBytes32",
+    "resolve",
+    "setTTL",
+    "textNamehash",
+    "nameLength",
+    "base32HexDecodeWord",
+    "getHex",
+    "setApprovalForAll",
+    "revertWithDefaultOffchainLookup",
+    "next",
+    "readUint8",
+    "verifyCallResult",
+    "readUint16",
+    "appendInt",
+    "readUint32",
+    "functionDelegateCall",
+    "labelCount",
+    "setSubnodeOwner",
+    "hexToAddress",
+    "parseRR",
+    "done",
+    "appendUint8",
+    "iterateRRs",
+    "hexStringToBytes32",
+    "readBytes20",
+    "truncate",
+    "substring",
+    "readName",
+    "resolver",
+    "readSignedSet",
+    "progress",
+    "verifyRRSet",
+    "readReturnData",
+    "readDNSKEY",
+    "computeKeytag",
+    "readBytesN",
+    "_setResolverAndTTL",
+    "functionCallWithValue",
+    "resolveName",
+    "sendValue",
+    "addr",
+    "appendBytes20",
+    "returnDataSize",
+    "name",
+    "append",
+    "setOwner",
+    "fromBytes",
+    "equals",
+    "readTXT",
+    "callWithOffchainLookupPropagation",
+    "serialNumberGte",
+    "verifyCallResultFromTarget",
+    "ttl",
+    "_setOwner",
+    "isSubdomainOf",
+    "isApprovedForAll",
+    "resolveCallback",
+    "readDS",
+    "compare",
+    "find",
+    "memcpy",
+    "handleOffchainLookupError",
+    "setSubnodeRecord",
+    "recordExists",
+    "functionCall",
+    "owner",
+    "compareNames",
+    "parseAndResolve"
+  ],
+  "modifiers": [
+    "authorised"
+  ],
+  "events": [
+    "AddrChanged",
+    "ApprovalForAll",
+    "AlgorithmUpdated",
+    "Transfer",
+    "NewOwner",
+    "DigestUpdated",
+    "NewTTL",
+    "NewResolver"
+  ],
+  "interfaces": [
+    "ENS",
+    "IDNSGateway",
+    "IERC165",
+    "id",
+    "IExtendedDNSResolver",
+    "IAddrResolver",
+    "defined",
+    "IExtendedResolver"
+  ],
+  "dependencies": [
+    "../../contracts/resolvers/profiles/IAddrResolver.sol",
+    "../../contracts/resolvers/profiles/IExtendedDNSResolver.sol",
+    "../../contracts/resolvers/profiles/IExtendedResolver.sol",
+    "../dnssec-oracle/BytesUtils.sol",
+    "../dnssec-oracle/DNSSEC.sol",
+    "../dnssec-oracle/RRUtils.sol",
+    "../registry/ENSRegistry.sol",
+    "../utils/BytesUtils.sol",
+    "../utils/HexUtils.sol",
+    "./BytesUtils.sol",
+    "./ENS.sol",
+    "./IERC165.sol",
+    "@ensdomains/buffer/contracts/Buffer.sol",
+    "@openzeppelin/contracts/utils/introspection/ERC165.sol"
+  ],
+  "security_patterns": {
+    "payable_functions": [
+      "addr",
+      "sendValue",
+      "must"
+    ],
+    "reentrancy_guards": [
+      "ReentrancyGuard pattern detected"
+    ],
+    "low_level_calls": [
+      "Low-level calls detected"
+    ]
+  },
+  "potential_issues": [
+    "Uses block.timestamp (timestamp dependency)",
+    "Contains inline assembly"
+  ],
+  "abi_functions": [
+    {
+      "name": "ens",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "contract ENS",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "gatewayURL",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "oracle",
+      "inputs": [],
+      "outputs": [
+        {
+          "internalType": "contract DNSSEC",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "resolve",
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "name",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "resolveCallback",
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "response",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "extraData",
+          "type": "bytes"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "name": "supportsInterface",
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "interfaceId",
+          "type": "bytes4"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure"
+    }
+  ]
+}

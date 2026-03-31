@@ -1,0 +1,14 @@
+{
+  "name": "ExtendedDNSResolver",
+  "address": "0x08769D484a7Cd9c4A98E928D9E270221F3E8578c",
+  "compiler_version": "v0.8.17+commit.8df45f5f",
+  "optimization_used": "1",
+  "runs": "1200",
+  "constructor_arguments": "",
+  "evm_version": "london",
+  "library": "",
+  "license": "MIT",
+  "proxy": "0",
+  "implementation": "",
+  "swarm_source": ""
+}

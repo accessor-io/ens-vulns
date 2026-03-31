@@ -1,0 +1,94 @@
+{
+  "name": "P256SHA256Algorithm",
+  "address": "0x0faa24e538bA4620165933f68a9d142f79A68091",
+  "chain": null,
+  "source_files": [
+    "source.sol",
+    "sources/contracts/dnssec-oracle/BytesUtils.sol",
+    "sources/contracts/dnssec-oracle/algorithms/EllipticCurve.sol",
+    "sources/contracts/dnssec-oracle/algorithms/Algorithm.sol",
+    "sources/contracts/dnssec-oracle/algorithms/P256SHA256Algorithm.sol"
+  ],
+  "total_lines": 926,
+  "functions": [
+    "zeroAffine",
+    "readBytes32",
+    "substring",
+    "twice",
+    "readUint8",
+    "readUint16",
+    "readUint32",
+    "equals",
+    "addProj2",
+    "multiplyPowerBase2",
+    "parseKey",
+    "validateSignature",
+    "toAffinePoint",
+    "twiceProj",
+    "add",
+    "multipleGeneratorByScalar",
+    "multiplyScalar",
+    "inverseMod",
+    "isOnCurve",
+    "parseSignature",
+    "toProjectivePoint",
+    "compare",
+    "find",
+    "memcpy",
+    "keccak",
+    "addProj",
+    "verify",
+    "isZeroCurve",
+    "readBytes20",
+    "zeroProj",
+    "readBytesN",
+    "base32HexDecodeWord",
+    "addAndReturnProjectivePoint"
+  ],
+  "modifiers": [],
+  "events": [],
+  "interfaces": [
+    "Algorithm",
+    "for"
+  ],
+  "dependencies": [
+    "../../utils/BytesUtils.sol",
+    "../BytesUtils.sol",
+    "./Algorithm.sol",
+    "./EllipticCurve.sol"
+  ],
+  "security_patterns": {},
+  "potential_issues": [
+    "Contains inline assembly"
+  ],
+  "abi_functions": [
+    {
+      "name": "verify",
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "key",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "signature",
+          "type": "bytes"
+        }
+      ],
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view"
+    }
+  ]
+}

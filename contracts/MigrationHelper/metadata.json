@@ -1,0 +1,14 @@
+{
+  "name": "MigrationHelper",
+  "address": "0xeA6407e845Bf7a462FBdb3584728a9f617dA7FE9",
+  "compiler_version": "v0.8.26+commit.8a97fa7a",
+  "optimization_used": "1",
+  "runs": "1000000",
+  "constructor_arguments": "00000000000000000000000057f1887a8bf19b14fc0df6fd9b2acc9af147ea85000000000000000000000000d4416b13d2b3a9abae7acd5d6c2bbdbe25686401",
+  "evm_version": "paris",
+  "library": "",
+  "license": "MIT",
+  "proxy": "0",
+  "implementation": "",
+  "swarm_source": ""
+}

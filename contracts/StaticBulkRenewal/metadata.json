@@ -1,0 +1,14 @@
+{
+  "name": "StaticBulkRenewal",
+  "address": "0xc649947a460B135e6B9a70Ee2FB429aDBB529290",
+  "compiler_version": "v0.8.26+commit.8a97fa7a",
+  "optimization_used": "1",
+  "runs": "1000000",
+  "constructor_arguments": "00000000000000000000000059e16fccd424cc24e280be16e11bcd56fb0ce547",
+  "evm_version": "paris",
+  "library": "",
+  "license": "MIT",
+  "proxy": "0",
+  "implementation": "",
+  "swarm_source": ""
+}

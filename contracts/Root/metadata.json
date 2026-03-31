@@ -1,0 +1,14 @@
+{
+  "name": "Root",
+  "address": "0xaB528d626EC275E3faD363fF1393A41F581c5897",
+  "compiler_version": "v0.5.16+commit.9c3226ce",
+  "optimization_used": "0",
+  "runs": "200",
+  "constructor_arguments": "00000000000000000000000000000000000c2e074ec69a0dfb2997ba6c7d2e1e",
+  "evm_version": "Default",
+  "library": "",
+  "license": "None",
+  "proxy": "0",
+  "implementation": "",
+  "swarm_source": "bzzr://0892e4c83cff533d9e4652525f1e30c0a7ec2adf58d296e3df1b85911c930f82"
+}
